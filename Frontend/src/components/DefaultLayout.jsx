@@ -1,12 +1,13 @@
+import { Outlet } from "react-router-dom"
 import Asidebar from "./Asidebar"
 
 
-const DefaultLayout = ({ children }) => {
+const DefaultLayout = () => {
   return (
     <>
       <main className="defaultLayout-main-container">
         <Asidebar/>
-        {children}
+        <Outlet />
       </main>
 
       <footer>
