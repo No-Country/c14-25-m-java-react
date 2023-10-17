@@ -16,10 +16,10 @@ const Asidebar = () => {
           </section>
           <nav>
             <ul>
-              <NavLink to={"/"}><li> <SvgGridView /> Dashboard </li></NavLink>
+              <NavLink to={"/"}><li > <SvgGridView /> Dashboard </li></NavLink>
               <NavLink to={"/previous-expenses"}><li> <SvgPreviousExpenses /> Gastos anteriores </li></NavLink>
               <NavLink to={"/savings-goals"}><li> <SvgSavingsGoals /> Metas de ahorro </li></NavLink>
-              <NavLink to={"/historical-reports"}><li> <SvgHistoricalReports /> Reportes históricos </li></NavLink>
+              <NavLink to={"/historical-reports"}><li > <SvgHistoricalReports /> Reportes históricos </li></NavLink>
             </ul>
           </nav>
         </aside>
