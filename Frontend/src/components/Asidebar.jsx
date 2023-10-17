@@ -1,21 +1,24 @@
 /* eslint-disable react/prop-types */
+import { NavLink } from "react-router-dom";
 import SvgError from "../assets/icons/SvgError";
 import SvgGridView from "../assets/icons/SvgGridView";
 import SvgPreviousExpenses from "../assets/icons/SvgPreviousExpenses";
 import SvgSavingsGoals from "../assets/icons/SvgSavingsGoals";
 import Logo from "./../assets/logo.png";
-import { Link } from "react-router-dom"
+
 const Asidebar = () => {
   return (
     <>
-        <aside className="asidebar-container">          
+        <aside className="asidebar-container">
+          <section>
+            <img src={Logo} alt="Logo oficial de presupuesto claro." />
+          </section>
           <nav>
-            <ul>   
-              <Link to="/" className=""><img src={Logo} alt="Logo oficial de presupuesto claro." /></Link>           
-              <li> <Link to="/" className=""><SvgGridView /> Dashboard </Link></li>
-              <li>  <Link to="/previous-expenses" className=""><SvgPreviousExpenses /> Gastos anteriores</Link></li>
-              <li>  <Link to="/savings-goals" className=""><SvgSavingsGoals /> Metas de ahorro </Link></li>
-              <li>  <Link to="/historical-reports" className=""><SvgError /> Reportes históricos</Link> </li>
+            <ul>
+              <NavLink to={"/"}><li> <SvgGridView /> Dashboard </li></NavLink>
+              <NavLink to={"/previous-expenses"}><li> <SvgPreviousExpenses /> Gastos anteriores </li></NavLink>
+              <NavLink to={"/savings-goals"}><li> <SvgSavingsGoals /> Metas de ahorro </li></NavLink>
+              <NavLink to={"/historical-reports"}><li> <SvgError /> Reportes históricos </li></NavLink>
             </ul>
           </nav>
         </aside>

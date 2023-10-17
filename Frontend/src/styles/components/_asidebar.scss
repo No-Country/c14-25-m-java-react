@@ -32,27 +32,22 @@
                 height: 40px;
                 display: flex;
                 align-items: center;
-                gap: 1rem;                
+                gap: 1rem;
+                background-color: unset;
                 position: relative;
                 right: 2rem;
                 padding: 0 2rem;
                 border-radius: 0px 50px 50px 0px;
-                border-radius: 0px 50px 50px 0px;
-                transition:  0.5s ease-in;
-               
-                &:hover{
-                    background-color: $violeta-medio1;
-                }
-                a{
-                    text-decoration: none;
-                    font: $heading-fontsize-xs;
-                    color: $heading-fontcolor;
-                }
-                a.active li {
-                    background-color: $violeta-medio1;
-                }
-                
+                transition: background 0.5s ease-in;
+            }
 
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            a.active li {
+                background-color: #C5A7FF;
             }
         }
 
