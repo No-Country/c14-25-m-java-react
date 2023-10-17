@@ -8,6 +8,7 @@ $font-title: 'Inter', sans-serif;
 $font-body: 'Atkinson Hyperlegible', sans-serif;
 
 /*Heading Font sizes**/
+$heading-fontsize-xxxl: normal normal 600 56px $font-title;
 $heading-fontsize-xxl: normal normal bold 48px $font-title;
 $heading-fontsize-xl: normal normal bold 40px $font-title;
 $heading-fontsize-l: normal normal 500 36px $font-title;
@@ -35,7 +36,14 @@ $success-fillcolor: #418944;
 $warning-fillcolor: #E8B93F;
 $error-fillcolor: #D74242;
 
+
+$dark-violet: #5706AC; //Texto en tarjeta de usuario
+$middle-violet: #7E07FA;
+$light-violet:#C5A7FF;
 $white-color:#FFFFFF;
+$black-color: #14181F;
+$gray-border-color:#C0C0C0;
+
 $violeta-bajo:#F1EDF6;
 $violeta-medio1:#C5A7FF; //300
 $violeta-medio2:#7E07FA;//700

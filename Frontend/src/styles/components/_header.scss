@@ -1,0 +1,53 @@
+.header-container {
+    display: flex;
+    margin: 3rem 0;
+    align-items: center;
+    justify-content: space-between;
+
+    .header-section-title {
+
+        h2 {
+            font: $heading-fontsize-xxxl;
+            line-height: 67px;
+        }
+
+        p {
+            font: $heading-fontsize-xs;
+        }
+    }
+
+    .header-section-user {
+        display: flex;
+        border: 1px solid $gray-border-color;
+        height: 100%;
+        padding: 0.5rem 1rem;
+        gap: 1rem;
+        border-radius: 10px;
+        background-color: $white-color;
+        min-width: 332px;
+
+        .header-section-user-image {
+            width: 78px;
+            height: 78px;
+            object-fit: cover;
+            border-radius: 100%;
+        }
+
+        .header-section-user-settings {
+            color: $dark-violet;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+
+            h3,
+            .bolder {
+                font: $heading-fontsize-s;
+            }
+
+            .bolder {
+                font-weight: 600;
+            }
+        }
+    }
+}
