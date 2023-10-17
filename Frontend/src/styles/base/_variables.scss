@@ -7,19 +7,34 @@
 $font-title: 'Inter', sans-serif;
 $font-body: 'Atkinson Hyperlegible', sans-serif;
 
-/*Heading
+/*Heading Font sizes**/
+$heading-fontsize-xxl: normal normal bold 48px $font-title;
+$heading-fontsize-xl: normal normal bold 40px $font-title;
+$heading-fontsize-l: normal normal 500 36px $font-title;
+$heading-fontsize-m: normal normal 500 32px $font-title;
+$heading-fontsize-s: normal normal 500 24px $font-title;
+$heading-fontsize-xs: normal normal 500 20px $font-title;
 
-font-style
-font-variant
-font-weight
-font-size/line-height
-font-family
 
-**/
+/*Body Font sizes*/
+$body-fontsize-regular: normal normal 400 16px $font-body;
 
-$header-xxl: normal normal bold 48px $font-title;
+/*Font Colors*/
+$heading-fontcolor: #263238;
+$body-fontcolor: #414750;
+$disabled-fontcolor: #565E69;
+$placeholder-fontcolor: #6B7480;
+$informative-fontcolor: #1C51A4;
+$success-fontcolor: #1E4620;
+$warning-fontcolor: #82620F;
+$error-fontcolor: #AB2816;
 
-/*Colores*/
+/*Line or fill colors*/
+$informative-fillcolor: #1893D5;
+$success-fillcolor: #418944;
+$warning-fillcolor: #E8B93F;
+$error-fillcolor: #D74242;
+
 $blanco:#FFFFFF;
 $violeta-bajo:#F1EDF6;
 $violeta-medio1:#C5A7FF; //300
