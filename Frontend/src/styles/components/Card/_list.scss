@@ -1,0 +1,14 @@
+.List{   
+    background-color: $white-color;
+    border: $card-border;
+    border-radius: $card-borderRadius;
+    .ListDetail{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    background-color: $white-color;
+    border: $card-border;
+    border-radius: $card-borderRadius;
+        
+    }
+}

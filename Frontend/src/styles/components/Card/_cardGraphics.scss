@@ -1,0 +1,14 @@
+.cardGraphics-div{
+    display: flex;
+    justify-content: space-between;
+} 
+.cardGraphics-article{
+    background-color: $white-color;
+    border: $card-border;
+    border-radius: $card-borderRadius;
+    .cardGraphics-article-div{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;    
+    }
+}

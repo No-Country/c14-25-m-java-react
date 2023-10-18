@@ -39,6 +39,7 @@ $error-fillcolor: #D74242;
 
 $dark-violet: #5706AC; //Texto en tarjeta de usuario
 $middle-violet: #7E07FA;
+$middle1-violet: #7E07FA;
 $light-violet:#C5A7FF;
 $white-color:#FFFFFF;
 $black-color: #14181F;
@@ -61,7 +62,7 @@ $amarillo-medio:#FFA629;
 
 /*Algunos elementos*/
 //card
-$card-border: 1px solid $color-border;
+$card-border: 1px solid $gray-border-color;
 $card-borderRadius:10px;
 //button
 $background-buttonDefault: linear-gradient(270deg, #5706AC 2.75%, #8047BC 100%);

@@ -1,7 +1,7 @@
 function Amount({p}) {
     return (
         <>
-           { p? <ul >
+           { p? <ul className="Amount">
                 <li>Pago de alquiler</li>
                 <li>Renta</li>
                 <li>60000</li>
@@ -10,7 +10,7 @@ function Amount({p}) {
                 <li></li>
                 <li>iconos</li>
                 </ul>:
-                <ul>
+                <ul className="AmountDetail">
                 
                 <li>Renta</li>
                 <li>60000</li>                

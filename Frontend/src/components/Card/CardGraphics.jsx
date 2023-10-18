@@ -6,15 +6,16 @@ function CardGraphics (){
     
 return(
     <>  
-    <div>
+    <div className="cardGraphics-div">
     <h2>octubre</h2>
     <Button /> 
     </div>
-    <article className="cardGraphics-article">       
-    
+
+    <article className="cardGraphics-article">         
+    <div className="cardGraphics-article-div" >
     <Graphic/>
-    <Amount/>
-    
+    <Amount/>   
+    </div> 
     <List/>  
     </article>
     

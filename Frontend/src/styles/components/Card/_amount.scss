@@ -1,0 +1,16 @@
+.Amount{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    background-color: $white-color;
+    border: $card-border;
+    
+    border-style:none none solid none;
+}
+.AmountDetail{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 30%;
+   
+}
