@@ -1,23 +1,25 @@
 import React from 'react'
-import CardGeneral from '../components/CardGeneral'
+
+import CardAmount from "../components/Card/CardAmounts"
+import CardGraphics from "../components/Card/CardGraphics"
 import Button from '../components/button'
 const Dashboard = () => {
   return (
-    <main className='dashboard'>
-      <div>Dashboard</div>
-      <section>
-        <CardGeneral egreso={true} />
-        <CardGeneral egreso={false} />
-        
-      </section>
-      <Button/>
-      <section>
-      
-      <CardGeneral egreso={null} />
-      </section>
-      
+    <article className='dashboard'>
 
-    </main>
+      <article className='dashboard-first-article'>
+        <CardAmount egreso={true} />
+        <CardAmount egreso={false} />
+        <CardAmount egreso={false} />
+      </article>
+      
+      <article  className='dashboard-second-article'>
+      
+      <CardGraphics egreso={null} />
+      </article>
+
+
+    </article>
   )
 }
 

@@ -1,0 +1,17 @@
+.addButton{
+    background: $background-buttonDefault;
+    color: $white-color;
+    border:$card-border ; 
+    border-radius:$card-borderRadius;
+    &:default{
+        background: $background-buttonDisable;
+    }
+    &:hover{
+        background: $background-buttonHover;
+        color: aqua;
+    }       
+    &:active{
+        background: $background-buttonActive;
+    }
+    
+}

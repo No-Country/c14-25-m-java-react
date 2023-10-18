@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "recharts": "^2.9.0",
+    "sass": "^1.69.3"
+  }
+}
