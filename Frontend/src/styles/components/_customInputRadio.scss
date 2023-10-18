@@ -1,4 +1,3 @@
-
 .customInputRadio-container {
     display: flex;
     align-items: center;
@@ -8,7 +7,7 @@
         width: 24px;
         height: 24px;
         background-color: $white-color;
-        border: 0.4rem solid $dark-violet;
+        border: 0.2rem solid $dark-violet;
         border-radius: 100%;
         transition: all 0.5s ease-in-outlight;
     
@@ -24,8 +23,7 @@
     }
     
     .customInputRadio-container-input:checked + .customInputRadio-container-label {
-        background-color: $light-violet;
-    
+        border: 0.4rem solid $dark-violet;    
     }
     
     .customInputRadio-container-title {

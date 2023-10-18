@@ -1,4 +1,4 @@
-const CustomInputRadio = ({ id, name, value, title}) => {
+const CustomInputRadio = ({ id, name, value, title, register}) => {
 
     return (
         <>
@@ -9,6 +9,7 @@ const CustomInputRadio = ({ id, name, value, title}) => {
                     name={name}
                     id={id}
                     value={value}
+                    {...register(name, { required: true })} 
                 />
 
                 <label

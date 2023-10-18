@@ -2,10 +2,57 @@ import SvgClose from '../../assets/icons/SvgClose';
 import CustomInput from './CustomInput';
 import CustomDropdown from './CustomDropdown';
 import CustomInputRadio from './CustomInputRadio';
+import { useForm } from "react-hook-form"
+import { useNewSavingsGoals } from '../../services/useNewSavingsGoals';
+import { useEffect } from 'react';
 
 const FormNewSavingsGoals = ({ handleStateModal }) => {
+    const {increaseDB, db} = useNewSavingsGoals();
+
+    useEffect(()=>{
+        console.log("DB: ", db)
+    }, [db])
+
+    const {
+        register,
+        handleSubmit,
+        watch,
+        setValue,
+        formState: { errors },
+    } = useForm()
+
+    const onSubmit = (dataForm) => {
+        increaseDB(dataForm )
+    }
+
+    const handleReset = () => {
+        setValue("name_savings", null)
+        setValue("shared_savings", null)
+        setValue("amount_savings", null)
+        setValue("time_savings", null)
+        setValue("category_savings", null)
+    }
+
+    const category_savings =  [
+        'Vacaciones',
+        'Refacción',
+        'Casa',
+        'Educación',
+        'Emergencias',
+        'Retiro',
+        'Casamiento',
+        'Personalizar'
+    ];
+
+    const time_savings = [
+        '1 Mes',
+        '3 Meses',
+        '6 Meses',
+        '12 Meses'
+    ]
+
     return (
-        <form className='newSavingsGoals-form' action="">
+        <form onSubmit={handleSubmit(onSubmit)} className='newSavingsGoals-form' action="">
 
             <header className='newSavingsGoals-header'>
                 <h3>Nuevo ahorro</h3>
@@ -17,8 +64,8 @@ const FormNewSavingsGoals = ({ handleStateModal }) => {
 
             <section className='newSavingsGoals-section'>
 
-                <CustomInput name={"name_savings"} placeholder={"Nombre del ahorro"} />
-                <CustomDropdown placeholder={"Categoría"} />
+                <CustomInput register={register} name={"name_savings"} placeholder={"Nombre del ahorro"} />
+                <CustomDropdown watch={watch} setValue={setValue} register={register} name={"category_savings"} dataOptions={category_savings} placeholder={"Categoría"} />
 
             </section>
 
@@ -27,22 +74,22 @@ const FormNewSavingsGoals = ({ handleStateModal }) => {
                 <p>¿Este ahorro será compartido con otra persona?</p>
 
                 <section className='newSavingsGoals-section-inputRadio-options'>
-                    <CustomInputRadio title={"Sí"} name={"shared_savings"} id={"shared_savings_yes"} value={"si"} />
-                    <CustomInputRadio title={"No"} name={"shared_savings"} id={"shared_savings_no"} value={"no"} />
+                    <CustomInputRadio register={register} title={"Sí"} name={"shared_savings"} id={"shared_savings_yes"} value={"si"} />
+                    <CustomInputRadio register={register} title={"No"} name={"shared_savings"} id={"shared_savings_no"} value={"no"} />
                 </section>
 
             </section>
 
             <section className='newSavingsGoals-section'>
-                <CustomInput name={"savings_name"} placeholder={"Monto que querés ahorrar"} />
-                <CustomDropdown placeholder={"Indica el tiempo que querés ahorrar"} />
+                <CustomInput register={register} name={"amount_savings"} placeholder={"Monto que querés ahorrar"} />
+                <CustomDropdown watch={watch} setValue={setValue} register={register} name={"time_savings"} dataOptions={time_savings} placeholder={"Indica el tiempo que querés ahorrar"} />
             </section>
 
             <section className='newSavingsGoals-section-buttons'>
 
-                <button type='reset'>Cancelar</button>
+                <button onClick={handleReset} type='reset'>Cancelar</button>
                 <button type="submit">Confirmar</button>
-                
+
             </section>
 
         </form>
@@ -50,3 +97,13 @@ const FormNewSavingsGoals = ({ handleStateModal }) => {
 }
 
 export default FormNewSavingsGoals
+
+/**
+ * 
+        <code>
+            <pre>
+                {JSON.stringify(watch(),null,2)}
+            </pre>
+        </code>
+ * 
+ **/
