@@ -6,13 +6,13 @@ import Header from "./Header"
 const DefaultLayout = () => {
   return (
     <>
-      <div className="defaultLayout-main-container">
+      <section className="defaultLayout-main-container">
         <Asidebar/>
-        <main className="defaultLayout-main-section">
+        <section className="defaultLayout-main-section">
           <Header />
           <Outlet />
-        </main>
-      </div>
+        </section>
+      </section>
     </>
   )
 }
