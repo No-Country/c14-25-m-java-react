@@ -13,3 +13,25 @@
     font: $heading-fontsize-xs;
     cursor: pointer;
 }
+
+.newGoalModal-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+
+    .newGoalModal-background {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        right: 0;
+        background: #00000078;
+        z-index: 101;
+        height: 100vh;
+    }
+}
