@@ -1,0 +1,68 @@
+.cardSavingGoal-container {
+    background-color: $white-color;
+    min-height: 487px;
+    border-radius: $card-borderRadius;
+    overflow: hidden;
+    border: $card-border;
+
+    .cardSavingGola-container-image {
+        width: 100%;
+        height: 303px;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover;
+            transform: scale(1);
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 150px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(#FFFFFF00, #323232);
+        }
+
+    }
+
+    .cardSavingGola-container-description {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 90%;
+        min-height: 150px;
+        margin: 0 auto;
+        justify-content: center;
+
+        h3 {
+            font: $heading-fontsize-xs;
+            font-weight: 700;
+        }
+
+        button {
+            background-color: $middle-violet;
+            border-radius: 100px;
+            min-height: 50px;
+            border: none;
+            color: $white-color;
+            font: $heading-fontsize-xs;
+            cursor: pointer;
+
+            span.bolder {
+                font: $heading-fontsize-xs;
+                font-weight: 800;
+            }
+        }
+    }
+}

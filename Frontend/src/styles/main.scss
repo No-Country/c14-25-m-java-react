@@ -8,18 +8,22 @@
 @import "./components/header";
 @import "./pages/dashboard";
 @import "./components/button";
+
 //Card
 @import "./components/Card/amount";
 @import "./components/Card/cardAmount";
 @import "./components/Card/graphic";
 @import "./components/Card/list";
 @import "./components/Card/cardGraphics";
-
-
 @import "./components/asidebar";
-.savingsGoals-container{
-    min-height: 611px;
-    width: 100%;
-    display: flex;
-}
-
+@import "./components/defaulSectionLayout";
+@import "./components/asidebar";
+@import "./components/header";
+@import "./components/savingsGoals";
+@import "./components/cardSavingGoal";
+@import "./components/newGoalButton";
+@import "./components/formNewSavingsGoals";
+@import "./components/customInput";
+@import "./components/customDropdown";
+@import "./components/customInputRadio";
+@import "./components/customInputFile";
