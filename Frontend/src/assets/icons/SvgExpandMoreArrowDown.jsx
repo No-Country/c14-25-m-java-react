@@ -4,7 +4,7 @@ const SvgExpandMoreArrowDown = () => {
     return (
         <>
             <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <mask id="mask0_29_702" maskType="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="44" height="44">
+                <mask id="mask0_29_702" maskUnits="userSpaceOnUse" x="0" y="0" width="44" height="44">
                     <rect width="44" height="44" fill="#D9D9D9" />
                 </mask>
                 <g mask="url(#mask0_29_702)">

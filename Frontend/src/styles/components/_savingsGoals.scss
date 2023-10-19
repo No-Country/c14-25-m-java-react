@@ -1,0 +1,15 @@
+.savingsGoals-container {
+    min-height: 611px;
+    width: 100%;
+    border-radius: $card-borderRadius;
+    background-color: $white-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.savingsGoals-container-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(455px, 1fr));
+    gap: 2rem;
+}

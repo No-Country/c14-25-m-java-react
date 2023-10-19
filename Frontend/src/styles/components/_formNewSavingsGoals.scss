@@ -1,0 +1,108 @@
+form.newSavingsGoals-form {
+    position: relative;
+    z-index: 102;
+    min-width: 800px;
+    min-height: 500px;
+    background-color: $white-color;
+    border-radius: 20px;
+    box-shadow: #00000040;
+    padding: 2rem 3rem;
+
+    header.newSavingsGoals-header {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+
+        h3 {
+            font: $heading-fontsize-s;
+            font-weight: 700;
+            line-height: 46px;
+        }
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+    }
+
+    section.newSavingsGoals-section {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1.5rem 0;
+    }
+
+    section.newSavingsGoals-subsection {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    section.newSavingsGoals-section-inputRadio {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 0;
+        gap: 1rem;
+
+        p {
+            font: $body-fontsize-regular;
+        }
+
+        section.newSavingsGoals-section-inputRadio-options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            width: 150px;
+        }
+    }
+
+    section.newSavingsGoals-section-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 5rem;
+
+        button {
+            min-width: 142px;
+            min-height: 60px;
+            border-radius: $card-borderRadius;
+            border: 2px solid $black-color;
+            background-color: $white-color;
+        }
+
+        button[type="submit"] {
+            border-radius: $card-borderRadius;
+            padding: 12px 20px 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            border: none;
+            background: $background-buttonDefault;
+            color: $white-color;
+            font: $heading-fontsize-xs;
+            cursor: pointer;
+        }
+
+        button[type="reset"] {
+            border-radius: $card-borderRadius;
+            padding: 12px 20px 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            border: 2px solid $dark-violet;
+            color: $dark-violet;
+            font: $heading-fontsize-xs;
+            cursor: pointer;
+        }
+    }
+
+}

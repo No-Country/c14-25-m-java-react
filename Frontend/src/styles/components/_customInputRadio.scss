@@ -1,0 +1,33 @@
+.customInputRadio-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .customInputRadio-container-label{
+        width: 24px;
+        height: 24px;
+        background-color: $white-color;
+        border: 0.2rem solid $dark-violet;
+        border-radius: 100%;
+        transition: all 0.5s ease-in-outlight;
+    
+        &:hover {
+            background-color: $light-violet;
+        }
+    }
+    
+    
+    .customInputRadio-container-input {
+        width: 0;
+        height: 0;
+    }
+    
+    .customInputRadio-container-input:checked + .customInputRadio-container-label {
+        border: 0.4rem solid $dark-violet;    
+    }
+    
+    .customInputRadio-container-title {
+        margin-left: 0.5rem;
+        font: $body-fontsize-regular;
+    }
+}
