@@ -5,11 +5,12 @@ import CustomInputRadio from './CustomInputRadio';
 import { useForm } from "react-hook-form"
 import { useNewSavingsGoals } from '../../services/useNewSavingsGoals';
 import { useEffect } from 'react';
+import CustomInputFile from './CustomInputFile';
 
 const FormNewSavingsGoals = ({ handleStateModal }) => {
-    const {increaseDB, db} = useNewSavingsGoals();
+    const { increaseDB, db } = useNewSavingsGoals();
 
-    useEffect(()=>{
+    useEffect(() => {
         console.log("DB: ", db)
     }, [db])
 
@@ -18,11 +19,12 @@ const FormNewSavingsGoals = ({ handleStateModal }) => {
         handleSubmit,
         watch,
         setValue,
-        formState: { errors },
+        formState: { errors, isValid },
     } = useForm()
 
     const onSubmit = (dataForm) => {
-        increaseDB(dataForm )
+        increaseDB(dataForm)
+        handleStateModal()
     }
 
     const handleReset = () => {
@@ -33,7 +35,7 @@ const FormNewSavingsGoals = ({ handleStateModal }) => {
         setValue("category_savings", null)
     }
 
-    const category_savings =  [
+    const category_savings = [
         'Vacaciones',
         'Refacción',
         'Casa',
@@ -73,25 +75,30 @@ const FormNewSavingsGoals = ({ handleStateModal }) => {
 
                 <p>¿Este ahorro será compartido con otra persona?</p>
 
-                <section className='newSavingsGoals-section-inputRadio-options'>
-                    <CustomInputRadio register={register} title={"Sí"} name={"shared_savings"} id={"shared_savings_yes"} value={"si"} />
-                    <CustomInputRadio register={register} title={"No"} name={"shared_savings"} id={"shared_savings_no"} value={"no"} />
+                <section className='newSavingsGoals-subsection'>
+                    
+                    <section className='newSavingsGoals-section-inputRadio-options'>
+                        <CustomInputRadio register={register} title={"Sí"} name={"shared_savings"} id={"shared_savings_yes"} value={"si"} />
+                        <CustomInputRadio register={register} title={"No"} name={"shared_savings"} id={"shared_savings_no"} value={"no"} />
+                    </section>
+
+                    <CustomInputFile title={"Subir imagen"} register={register} setValue={setValue} name={"image_savings"} />
+
                 </section>
 
             </section>
 
             <section className='newSavingsGoals-section'>
                 <CustomInput register={register} name={"amount_savings"} placeholder={"Monto que querés ahorrar"} />
-                <CustomDropdown watch={watch} setValue={setValue} register={register} name={"time_savings"} dataOptions={time_savings} placeholder={"Indica el tiempo que querés ahorrar"} />
+                <CustomDropdown placeholder={"Indica el tiempo que querés ahorrar"} watch={watch} setValue={setValue} register={register} name={"time_savings"} dataOptions={time_savings} />
             </section>
 
             <section className='newSavingsGoals-section-buttons'>
 
                 <button onClick={handleReset} type='reset'>Cancelar</button>
-                <button type="submit">Confirmar</button>
+                <button disabled={!isValid} type="submit">Confirmar</button>
 
             </section>
-
         </form>
     )
 }

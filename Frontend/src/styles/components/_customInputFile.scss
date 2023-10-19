@@ -1,0 +1,73 @@
+.customInputFile-input {
+    width: 0;
+    height: 0;
+}
+
+.customInputFile-label {
+    min-width: 182px;
+    min-height: 44px;
+    font: $heading-fontsize-xs;
+    font-weight: 500;
+    border-radius: $card-borderRadius;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    background-color: $white-color;
+    border: 3px solid $dark-violet;
+    color: $dark-violet;
+    position: relative;
+
+    svg {
+        path {
+            fill: $dark-violet;
+            color: $dark-violet;
+        }
+    }
+
+    &:hover {
+        background-color: $dark-violet;
+        color: $white-color;
+
+        svg {
+            path {
+                fill: $white-color;
+                color: $white-color;
+            }
+        }
+    }
+
+    &::after {
+        content: attr(title);
+        position: absolute;
+        bottom: 50%;
+        transform: translateY(50%);
+        right: 100%;
+        margin-right: 1rem;
+        max-width: 200px;
+        height: 40px;
+        text-wrap: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        overflow: hidden;
+    }
+}
+
+.customInputFile-label-active {
+    background-color: $dark-violet;
+    color: $white-color;
+
+    svg {
+        path {
+            fill: $white-color;
+        }
+    }
+
+    &::after {
+        color:  $dark-violet;
+    }
+}
