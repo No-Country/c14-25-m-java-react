@@ -1,0 +1,30 @@
+.RegisterForm{
+    width: 15rem;
+    background: $card-backgroundColor;
+    border: $card-border;
+    border-radius: $card-borderRadius;
+    padding: 1rem;
+    h2{
+    text-align: center;
+    border: $card-border;
+    border-style: none none solid none;
+    margin-bottom: 1rem;
+    }
+    .form{
+        display: flex;
+        flex-wrap: wrap;     
+        justify-content: center;  
+        input{
+            width: 100%;
+            border: $card-border;
+           border-radius: $card-borderRadius;
+           margin: 0.5rem;
+           padding: 0.3rem;
+           &:focus{
+           border-color:  $color-inputFocus;
+           outline-color: $color-inputFocus
+           }
+           
+        }
+    }
+}

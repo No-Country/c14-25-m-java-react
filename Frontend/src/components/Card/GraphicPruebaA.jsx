@@ -84,7 +84,7 @@ const data = [
 
 
 
-const AreaChartComponent = () => {
+const GraphicPruebaA = () => {
     const [matches, setMatches] = useState(
         window.matchMedia("(min-width: 768px)").matches
       )
@@ -105,17 +105,28 @@ const AreaChartComponent = () => {
 
     return (
         <>
-         <div >
-      {matches && (<h1>Big Screen</h1>)}
-      {!matches && (<h3>Small Screen</h3>)}
-     </div>
-        <ResponsiveContainer width={"90%"} height={500}>
+         <div className='GraphicPruebaA-h1' >
+            <h2>Al reducir el tamaño a menos de 768 el grafico deja de ser anual a se hasta julio.</h2>
+      {matches && (<h1>Big Screen Mayor a 768px</h1>)}
+      {!matches && (<h1>Small Screen  menor a 768px</h1>)}
+     </div >
+        <ResponsiveContainer width={"90%"} height={500}  className="GraphicPruebaA">
 
             <AreaChart data={!matches ? noDic:data}>
                 <Area type="monotone" 
                 activeDot dataKey="pv" 
                 stroke="#8884d8" 
-                fill="#C5A7FF" />
+                fillOpacity={1} fill="url(#colorUv)" />
+                <defs>
+    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
+      <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
+    </linearGradient>
+    <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
+      <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
+    </linearGradient>
+  </defs>
                 <Tooltip />
                 <XAxis dataKey={"name"} />
                 <YAxis />
@@ -128,4 +139,4 @@ const AreaChartComponent = () => {
     )
 }
 
-export default AreaChartComponent
+export default GraphicPruebaA

@@ -4,28 +4,45 @@
     justify-content: space-between;
     list-style: none;
     width: 100%;
+   
 }
 .Graphic{
     background-color: $white-color; 
-    width: 50%;
-    height:200px;
+    width: 60%;
+    height:500px;
     border-radius: $card-borderRadius;
     
 }
 .Graphic-date{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: auto;
     background-color: $white-color;
     border: $card-border;
     border-radius: $card-borderRadius;
-    width: 32%;
+    justify-content: center;
     
+    width: 32%;
+    padding:2rem ;
+    height: 100%;
     h3{
-        width: 100%;
+        display: flex;
+        margin-top: 0.2rem;
+        margin-bottom: 4rem;
+        font:  $heading-fontsize-xl;
+        align-items:end;
+        justify-content: space-between;
+        padding: 0 0.5rem;
+        span{
+            font: normal 16px $font-title
+        }
+       
     }
     .Graphic{
+        
         width: 100%;
+        height: 20rem;
+        
         border-radius: $card-borderRadius;
        
     }

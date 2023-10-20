@@ -1,17 +1,42 @@
 .addButton{
+    font: bold 18px $font-title;
     background: $background-buttonDefault;
     color: $white-color;
     border:$card-border ; 
     border-radius:$card-borderRadius;
+    padding: 0.5rem;
+    width: 200px;
+    height: 60px;
+    
     &:default{
         background: $background-buttonDisable;
     }
     &:hover{
         background: $background-buttonHover;
-        color: aqua;
+        
     }       
     &:active{
         background: $background-buttonActive;
     }
     
+}
+.register-button{
+    background: $background-buttonDefault;
+    color: $white-color;
+    border:$card-border ; 
+    border-radius:$card-borderRadius;
+    padding: 0.5rem;
+    width: auto;
+    margin-top: 1rem;   
+  
+    &:default{
+        background: $background-buttonDisable;
+    }
+    &:hover{
+        background: $background-buttonHover;
+        
+    }       
+    &:active{
+        background: $background-buttonActive;
+    }
 }

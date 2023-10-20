@@ -10,18 +10,22 @@ function Graphic({p}){
   ];
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 const PieChartWithPaddingAngles=(
-  <ResponsiveContainer>
+  <ResponsiveContainer >
 <PieChart  >
   <Pie
   
+ 
     data={data}
     cx="50%"
     cy="50%"
-    innerRadius={60}
-    outerRadius={80}
+    innerRadius={p=== null ? '74%': '65%'}
+    outerRadius={p=== null ? '95%': '80%'}
     fill="#8884d8"
-    paddingAngle={5}
+    paddingAngle={0}
     dataKey="value"
+    stroke="none"
+    
+
   >
     {data.map((entry, index) => (
       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -41,7 +45,7 @@ return(
     <div className="Graphic">{PieChartWithPaddingAngles}</div></>
     : 
     <div className="Graphic-date">
-    <h3>Julio</h3>
+    <h3>Julio <span>Gasto: 60.000</span></h3>
     <div className="Graphic">{PieChartWithPaddingAngles}</div>
     </div>
     }

@@ -1,7 +1,11 @@
 .List{   
-    background-color: $white-color;
-    border: $card-border;
+    display: flex;
+    flex-direction: column;
+    background-color: $white-color;  
     border-radius: $card-borderRadius;
+    justify-content: center;
+    margin-top: 2rem;
+    
     .ListDetail{
     display: flex;
     justify-content: space-between;
@@ -9,6 +13,13 @@
     background-color: $white-color;
     border: $card-border;
     border-radius: $card-borderRadius;
-        
+    margin:  0 1rem 0 1rem;
+    align-items: center;
+    padding: 1rem ;
+    background-color: #F4F4F4;
+    li{
+        font: $heading-fontsize-xs;   
+     font-weight: bold;
+    }
     }
 }

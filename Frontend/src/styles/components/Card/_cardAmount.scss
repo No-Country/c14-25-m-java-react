@@ -1,5 +1,23 @@
 .CardAmount{
+    
     background-color: $white-color;
     border: $card-border;
     border-radius: $card-borderRadius;
+    width: 30%;
+    padding: 1rem;
+    
+    p{
+        font: $heading-fontsize-s;
+        font-weight: bold;
+        margin:2rem 1rem ;
+        align-items: center;
+        span{
+            font:$heading-fontsize-m; 
+            color:$verde;
+           
+        }
+        .CardAmount-Gasto{
+            color:$red-egreso;
+        }
+    }
 }

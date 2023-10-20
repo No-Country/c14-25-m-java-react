@@ -2,19 +2,39 @@
     .dashboard-first-article{ 
         display: flex;
         justify-content: space-between;
-        margin-bottom:1rem ;
+        margin-bottom:4rem ;
        } 
        .dashboard-second-article{
-        margin-bottom: 2rem;
+        margin-bottom: 6rem;
 
+       }
+       h2{
+        font: $heading-fontsize-xxl;
+        margin-bottom: 2rem;
        }
        .dashboard-third-article{
         display: flex;
         justify-content: space-between;
         margin-bottom:1rem ;
+        width: 100%;
         
        }
       
     
     
+}
+.GraphicPruebaA-h1{
+    h1{
+        font: $heading-fontsize-l;
+    }
+    
+}
+.GraphicPruebaT{
+   
+    width: 20rem;
+    height: 20rem;
+}
+.GraphicPruebaA{
+    background-color: white;
+   
 }

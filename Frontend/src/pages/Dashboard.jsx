@@ -2,8 +2,9 @@ import React from 'react'
 
 import CardAmount from "../components/Card/CardAmounts"
 import CardGraphics from "../components/Card/CardGraphics"
-import Button from '../components/button'
+
 import Graphic from '../components/Card/Graphic'
+import RegisterForm from '../components/RegisterForm'
 const Dashboard = () => {
   return (
     <article className='dashboard'>
@@ -24,6 +25,7 @@ const Dashboard = () => {
       <Graphic p={null}/>
       <Graphic p={null}/>
       </article>
+      <RegisterForm/>
 
 
     </article>
