@@ -10,6 +10,46 @@
     flex-direction: column;
     gap: 2rem;
 
+    @media (max-width: 1150px) {
+        width: 80px;
+        align-items: center;
+    }
+
+    section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        @media (max-width: 1150px) {
+            width: 53px;
+            height: 53px;
+        }
+
+        img {
+
+            @media (max-width: 1150px) {
+                display: none;
+            }
+        }
+
+        .asidebar-logo-mobile {
+            display: none;
+            width: 53px;
+            height: 53px;
+            padding: 0;
+            border-radius: $card-borderRadius;
+            background-color: $dark-violet;
+            align-items: center;
+            justify-content: center;
+
+            @media (max-width: 1150px) {
+                width: 100%;
+                display: flex;
+            }
+        }
+    }
+
     nav {
         list-style: none;
         display: flex;
@@ -28,6 +68,10 @@
             flex-direction: column;
             width: 90%;
 
+            @media (max-width: 1150px) {
+                align-items: center;
+            }
+
             li {
                 min-height: 53px;
                 display: flex;
@@ -41,6 +85,26 @@
                 transition: background 0.5s ease-in;
                 font: $heading-fontsize-xs;
 
+                @media (max-width: 1150px) {
+                    width: 53px;
+                    height: 53px;
+                    padding: 0;
+                    border-radius: $card-borderRadius;
+                    position: unset;
+                    right: unset;
+                    padding: 0;
+                    justify-content: center;
+                }
+
+                span {
+                    font: $heading-fontsize-xs;
+
+                    @media (max-width: 1150px) {
+                        display: none;
+                    }
+
+                }
+
                 &:hover {
                     background-color: $light-violet;
                 }
@@ -49,6 +113,14 @@
             a {
                 text-decoration: none;
                 color: $black-color;
+
+                @media (max-width: 1150px) {
+                    width: 53px;
+                    height: 53px;
+                    padding: 0;
+                    border: $card-border;
+                    border-radius: $card-borderRadius;
+                }
             }
 
             a.active li {
