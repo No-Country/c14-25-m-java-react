@@ -63,7 +63,7 @@ const Login = () => {
         titleFacebook={"Iniciar sesión con Facebook"}
         footerTitle={"¿No tienes cuenta?"}
         footerTitleLink={"Crea una."}
-        footerTitlePath={"/"}
+        footerTitlePath={"/register"}
       >
 
         <form action="" onSubmit={handleSubmit(onSubmit)}>
@@ -77,6 +77,7 @@ const Login = () => {
               type={"email"}
               setValue={setValue}
               errors={errors}
+              watch={watch}
             />
 
             <Link to={""}>
@@ -94,6 +95,8 @@ const Login = () => {
               type={"password"}
               setValue={setValue}
               errors={errors}
+              watch={watch}
+
             />
 
             <Link to={""}>

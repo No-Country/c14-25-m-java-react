@@ -6,7 +6,6 @@ import SavingsGoals from "./pages/SavingsGoals"
 import HistoricalReports from "./pages/HistoricalReports"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
-import ValidateUser from "./components/ValidateUser"
 
 function App() {
 

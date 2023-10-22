@@ -1,4 +1,4 @@
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Dot } from 'recharts';
 
 const data = [
     {
@@ -86,11 +86,26 @@ const AreaChartComponent = () => {
         <ResponsiveContainer width={"90%"} height={500}>
 
             <AreaChart data={data}>
-                <Area type="monotone" activeDot dataKey="pv" stroke="#8884d8" fill="#C5A7FF" />
+
+                <Area type="monotone"
+                 dataKey="pv"
+                    stroke="#933FFF"
+                    fillOpacity={1} fill="url(#colorUv)" />
+                <defs>
+                    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#933FFF" stopOpacity={0.8} />
+                        <stop offset="95%" stopColor="#933FFF" stopOpacity={0} />
+                    </linearGradient>
+                    <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#933FFF" stopOpacity={0.8} />
+                        <stop offset="95%" stopColor="#933FFF" stopOpacity={0} />
+                    </linearGradient>
+                </defs>
                 <Tooltip />
                 <XAxis dataKey={"name"} />
                 <YAxis />
                 <CartesianGrid strokeDasharray="3 3" />
+
             </AreaChart>
 
 

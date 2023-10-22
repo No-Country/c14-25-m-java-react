@@ -58,13 +58,13 @@ const Register = () => {
     return (
         <>
             <DefaultLayoutFormUser
-                title={"Iniciar sesión"}
-                subtitle={"Accede a tu cuenta para organizar tus finanzas."}
-                titleGoogle={"Iniciar sesión con Google"}
-                titleFacebook={"Iniciar sesión con Facebook"}
-                footerTitle={"¿No tienes cuenta?"}
-                footerTitleLink={"Crea una."}
-                footerTitlePath={"/"}
+                title={"Crea tu cuenta"}
+                subtitle={"Empeza a cambiar la relación con tu dinero."}
+                titleGoogle={"Crear cuenta con Google"}
+                titleFacebook={"Crear cuenta con Facebook"}
+                footerTitle={"¿Tienes cuenta?"}
+                footerTitleLink={"Inicia sesión."}
+                footerTitlePath={"/login"}
             >
 
                 <form className="defaultLayoutFormUser-form" action="" onSubmit={handleSubmit(onSubmit)}>
@@ -78,6 +78,7 @@ const Register = () => {
                             type={"text"}
                             setValue={setValue}
                             errors={errors}
+                            watch={watch}
 
                         />
 
@@ -89,6 +90,8 @@ const Register = () => {
                             type={"text"}
                             setValue={setValue}
                             errors={errors}
+                            watch={watch}
+
                         />
                     </section>
 
@@ -100,6 +103,8 @@ const Register = () => {
                         type={"email"}
                         setValue={setValue}
                         errors={errors}
+                        watch={watch}
+
                     />
 
                     <CustomInput
@@ -110,6 +115,8 @@ const Register = () => {
                         type={"password"}
                         setValue={setValue}
                         errors={errors}
+                        watch={watch}
+
                     />
 
                     <CustomInput
@@ -120,6 +127,8 @@ const Register = () => {
                         type={"password"}
                         setValue={setValue}
                         errors={errors}
+                        watch={watch}
+
                     />
 
                     <button disabled={!isValid} type="submit" className="defaultLayoutFormUser-buttonSubmit">

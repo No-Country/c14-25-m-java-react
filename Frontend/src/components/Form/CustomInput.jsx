@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const CustomInput = ({ name, placeholder, register, style = {}, type = "text", setValue, errors}) => {
+const CustomInput = ({ name, placeholder, register, style = {}, type = "text", setValue, errors, watch}) => {
   const [inputData, setInputData] = useState("");
   const [isSelected, setIsSelected] = useState(false)
 
@@ -11,27 +11,28 @@ const CustomInput = ({ name, placeholder, register, style = {}, type = "text", s
       setInputData(value)
     }
     else {
-      setInputData("")      
+      setInputData("")
       setValue(name, "", { shouldValidate: true })
 
     }
 
   }
 
-  const handleBlur = (e) => {
-    setIsSelected(false)
-  }
-
-  useEffect(()=>{}, [
+  useEffect(() => {
     register(name, { required: true })
-  ])
+    setInputData(watch()[name])
+  }, [])
+
+  useEffect(() => {
+    setInputData(watch()[name])
+  }, [watch()[name]])
 
   return (
     <>
       <section className='customInput-container' >
 
         {
-          inputData.length > 0 ?
+          inputData?.length > 0 ?
             <label className={`customInput-label ${isSelected ? "customInput-label-focus" : ""}`} htmlFor={name}>
               {placeholder}
             </label>
@@ -42,7 +43,7 @@ const CustomInput = ({ name, placeholder, register, style = {}, type = "text", s
 
         <input
           onFocus={() => { setIsSelected(true) }}
-          onBlur={handleBlur}
+          onBlur={() => { setIsSelected(false) }}
           className='customInput-input'
           type={type}
           name={name}
