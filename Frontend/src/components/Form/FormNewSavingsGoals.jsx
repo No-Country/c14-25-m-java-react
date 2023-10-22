@@ -76,7 +76,7 @@ const FormNewSavingsGoals = ({ handleStateModal }) => {
                 <p>¿Este ahorro será compartido con otra persona?</p>
 
                 <section className='newSavingsGoals-subsection'>
-                    
+
                     <section className='newSavingsGoals-section-inputRadio-options'>
                         <CustomInputRadio register={register} title={"Sí"} name={"shared_savings"} id={"shared_savings_yes"} value={"si"} />
                         <CustomInputRadio register={register} title={"No"} name={"shared_savings"} id={"shared_savings_no"} value={"no"} />

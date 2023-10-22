@@ -12,7 +12,7 @@ const DefaultLayoutFormUser = ({ children, title, subtitle, titleGoogle, titleFa
 
                 <img src={Logo} alt="Logo de Presupuesto Claro" />
 
-                <section className="defaultLayoutFormUser-form">
+                <section className="defaultLayoutFormUser-container-form">
 
                     <section className="defaultLayoutFormUser-header">
                         <h2>{title}</h2>

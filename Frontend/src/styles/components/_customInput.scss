@@ -32,11 +32,18 @@
         position: relative;
         outline: none;
         transition: all 0.5s ease-in-out;
+        background-color: $white-color;
 
         &:focus {
             border-color:  $blue-input-selected;
+            background-color: $white-color ;
         }
 
+    }
+
+    .customInputError {
+        color: $error-fontcolor;
+        font: $heading-fontsize-xs;
     }
 
 }
