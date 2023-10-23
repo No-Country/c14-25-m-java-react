@@ -1,0 +1,43 @@
+.savingsGoals-container * {
+    font-family: $font-title;
+
+    g.recharts-xAxis.xAxis {
+        text.recharts-text.recharts-cartesian-axis-tick-value {
+
+            tspan {
+                font-weight: 600;
+                font-size: 0.9rem;
+                color: $black-color;
+            }
+        }
+    }
+
+}
+
+.areChartComponent-custom-tooltip {
+    min-width: 227px;
+    min-height: 149px;
+    background-color: #933FFF;
+    color: $white-color;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 2rem;
+
+    p {
+        &.title {
+            font: $heading-fontsize-s;
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 24px;
+        }
+    
+        &.subtitle {
+            font: $heading-fontsize-s;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+        }
+    }
+}

@@ -1,116 +1,82 @@
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Dot } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { useNewSavingsGoals } from "../services/useNewSavingsGoals";
 
-const data = [
-    {
-        name: '',
-        uv: 0,
-        pv: 0,
-        amt: 0,
-    },
-    {
-        name: 'Enero',
-        uv: 4000,
-        pv: 2400,
-        amt: 2400,
-    },
-    {
-        name: 'Febrero',
-        uv: 3000,
-        pv: 1398,
-        amt: 2210,
-    },
-    {
-        name: 'Marzo',
-        uv: 2000,
-        pv: 9800,
-        amt: 2290,
-    },
-    {
-        name: 'Abril',
-        uv: 2780,
-        pv: 3908,
-        amt: 2000,
-    },
-    {
-        name: 'Mayo',
-        uv: 1890,
-        pv: 4800,
-        amt: 2181,
-    },
-    {
-        name: 'Junio',
-        uv: 2390,
-        pv: 3800,
-        amt: 2500,
-    },
-    {
-        name: 'Julio',
-        uv: 3490,
-        pv: 4300,
-        amt: 2100,
-    },
-    {
-        name: 'Agosto',
-        uv: 4200,
-        pv: 5000,
-        amt: 2200,
-    },
-    {
-        name: 'Septiembre',
-        uv: 3100,
-        pv: 3200,
-        amt: 2500,
-    },
-    {
-        name: 'Octubre',
-        uv: 2800,
-        pv: 2700,
-        amt: 2100,
-    },
-    {
-        name: 'Noviembre',
-        uv: 3700,
-        pv: 4500,
-        amt: 2600,
-    },
-    {
-        name: 'Diciembre',
-        uv: 4000,
-        pv: 5000,
-        amt: 2400,
-    },
-];
+const CustomTooltip = ({ active, payload, label, savingsGoals }) => {
+    if (active && payload && payload.length) {
+        const selectedMonth = savingsGoals.find((month) => month.title === label);
+        const selectedSavingsGoals = selectedMonth ? selectedMonth.savingsGoals : [];
+
+        return (
+            <div className="areChartComponent-custom-tooltip">
+
+                <p className="title">{`${label}`}</p>
+
+                {selectedSavingsGoals.map((goal) => (
+                    <p className="subtitle" key={goal.id}>
+                        {goal.title}: ${goal.price}
+                    </p>
+                ))}
+
+                <p className="title">Total: ${selectedMonth.totalPrice}</p>
+
+            </div>
+        );
+    }
+
+    return null;
+};
 
 const AreaChartComponent = () => {
+    const { dbAreaChart } = useNewSavingsGoals()
+
     return (
         <ResponsiveContainer width={"90%"} height={500}>
+            <AreaChart data={dbAreaChart} >
+                <CartesianGrid strokeDasharray="0" vertical={false} />
 
-            <AreaChart data={data}>
-
-                <Area type="monotone"
-                 dataKey="pv"
+                <Area
+                    type="monotone"
+                    dataKey="totalPrice"
                     stroke="#933FFF"
-                    fillOpacity={1} fill="url(#colorUv)" />
+                    strokeWidth={2}
+                    fillOpacity={1}
+                    fill="url(#colorUv)"
+                    isAnimationActive={false}
+                    dot={{ r: 4, fill: "#933FFF" }}
+                    activeDot={{ r: 7, fill: "#933FFF" }}
+
+                />
+
                 <defs>
                     <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#933FFF" stopOpacity={0.8} />
-                        <stop offset="95%" stopColor="#933FFF" stopOpacity={0} />
-                    </linearGradient>
-                    <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#933FFF" stopOpacity={0.8} />
+                        <stop offset="5%" stopColor="#933FFF" stopOpacity={0.6} />
                         <stop offset="95%" stopColor="#933FFF" stopOpacity={0} />
                     </linearGradient>
                 </defs>
-                <Tooltip />
-                <XAxis dataKey={"name"} />
-                <YAxis />
-                <CartesianGrid strokeDasharray="3 3" />
+
+
+                <XAxis
+                    dataKey="title"
+                    angle={0}
+                    textAnchor="middle"
+                    tickLine={false}
+                    tickMargin={10}
+                    tick={{ fill: "#666666" }}
+                />
+
+                <YAxis
+                    allowDecimals={false}
+                    tickCount={5}
+                    tickLine={false}
+                    tickMargin={10}
+                    tick={{ fill: "#666666" }}
+                />
+
+                <Tooltip content={(props) => <CustomTooltip savingsGoals={dbAreaChart} {...props} />} />
 
             </AreaChart>
-
-
         </ResponsiveContainer>
-    )
-}
+    );
+};
 
-export default AreaChartComponent
+export default AreaChartComponent;
