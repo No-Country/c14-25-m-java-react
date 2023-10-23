@@ -1,11 +1,30 @@
 .customDropdown-container {
     display: inline-block;
-    height: 44px;
+    height: 54px;
     min-width: 341px;
     border-radius: 5px;
     border: $card-border;
     position: relative;
     background-color: $white-color;
+    &:focus {
+        border-color:  $blue-input-selected;
+        background-color: $white-color ;
+    }
+    .customInput-label {
+        padding: 0 0.5rem;
+        background-color: $white-color;
+        color: $placeholder-fontcolor;
+        font: $heading-fontsize-xs;
+        font-size: 15px;
+        position: absolute;
+        bottom: 85%;
+        left: 20px;
+        z-index: 20;
+        transition: all 0.5s ease-in-out;
+    } 
+    .customInput-label-focus {
+        color: $blue-input-selected;
+    }
 
     .customDropdown-title {
         display: flex;

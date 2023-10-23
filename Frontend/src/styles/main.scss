@@ -8,6 +8,7 @@
 @import "./components/header";
 @import "./pages/dashboard";
 @import "./components/button";
+@import "./pages/register";
 
 //Card
 @import "./components/Card/amount";
@@ -27,6 +28,8 @@
 @import "./components/customDropdown";
 @import "./components/customInputRadio";
 @import "./components/customInputFile";
+@import "./components/defaultLayoutFormUser";
+@import "./components/areaChartComponent"
 
 //Register Form
-@import "./components/registerForm"
+@import "./components/registerForm";

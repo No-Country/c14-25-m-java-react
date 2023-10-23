@@ -4,6 +4,8 @@ import Dashboard from "./pages/Dashboard"
 import PreviousExpenses from "./pages/PreviousExpenses"
 import SavingsGoals from "./pages/SavingsGoals"
 import HistoricalReports from "./pages/HistoricalReports"
+import Login from "./pages/Login"
+import Register from "./pages/Register"
 
 function App() {
 
@@ -23,7 +25,15 @@ function App() {
 
           <Route path="/historical-reports" element={<HistoricalReports />} />
 
+
         </Route>
+
+        <Route path="/login" element={<Login />} />
+
+        <Route path="/register" element={<Register />} />
+
+
+
 
       </Routes>
     </>

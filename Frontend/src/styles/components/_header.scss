@@ -3,6 +3,7 @@
     margin: 3rem 0;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     .header-section-title {
 
@@ -25,6 +26,7 @@
         border-radius: 10px;
         background-color: $white-color;
         min-width: 332px;
+        position: relative;
 
         .header-section-user-image {
             width: 78px;
@@ -47,6 +49,40 @@
 
             .bolder {
                 font-weight: 600;
+            }
+
+            
+        }
+
+        .header-section-user-options {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            background-color: $white-color;
+            width: 100%;
+            border: 1px solid $gray-border-color;
+            border-radius: 10px;
+            overflow: hidden;
+
+            ul {
+                list-style: none;
+
+                li {
+                    height: 54px;
+                    width: 100%;
+                    font: $heading-fontsize-s;
+                    color: $black-color;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 1rem;
+                    gap: 1rem;
+                    cursor: pointer;
+                    
+                    &:hover {
+                        background-color: gainsboro;
+                        
+                    }
+                }
             }
         }
     }

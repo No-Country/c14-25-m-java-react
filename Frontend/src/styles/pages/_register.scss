@@ -1,0 +1,9 @@
+.register-container-section-two {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    gap: 1rem;
+
+    .customInput-input {
+        min-width: 100% !important;
+    }
+}

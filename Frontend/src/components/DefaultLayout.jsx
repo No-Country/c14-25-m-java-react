@@ -4,6 +4,7 @@ import Header from "./Header"
 
 
 const DefaultLayout = () => {
+
   return (
     <>
       <section className="defaultLayout-main-container">
