@@ -1,41 +1,97 @@
 .Amount{
-    display: flex;
-    justify-content: space-between;
+    
     list-style: none;
     background-color: $white-color;
     border: $card-border;    
     border-style:none none solid none;
-    margin: 0 1rem 0  1rem ;
     align-items: center;
-    padding: 1rem 1.5rem 1rem 1rem;
+    padding:  1.5%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    text-align: center;
+    
     li{
-        font: normal 16px $font-title;
+        font: normal 1rem $font-title;
+        
     }
    
     .AmountType{
-        font: 600 16px $font-title;
+        text-align: left;
+        font: 600 1rem $font-title;
     }
     .AmountCategory{
-        font: 700 16px $font-title;
+      span{
+        font: 700 1rem $font-title;
+        background-size: 2rem auto ;
         color: $dark-violet;
         background-color: $dark-violetRGBA;
         border-radius:20px ;
         padding: 0.2rem 1rem 0.2rem 1rem;
+      }
+    }
+    .AmountIcons{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+       
+        button{
+            background-color: rgba(145, 36, 36, 0);
+            border-color: rgba(0, 0, 0, 0);
+            cursor: pointer;
+            &:hover{
+                path{
+                    fill: $dark-violet;
+                }
+            }
+        }
+        svg{
+            
+            margin: 1%;
+            
+            
+        }
     }
 }
 .AmountDetail{
     display: flex;
     justify-content: space-between;
     list-style: none;
-    width: 100%;
-    
+    width: 100%;    
     border: $card-border;
     border-style:none none solid none;
-    padding: 1.5rem 1rem 1.5rem 1rem;
-  
+    padding: 1.5rem 1.5% 1.5rem 1.5%;
     align-items: center;
+    
+  
+  
     li{
-        font: normal 18px $font-title;
+        font: normal 1.125rem $font-title;
+        text-align: center;
+        display: flex;
+       
+        
+        
+        svg {       
+            
+            circle{ 
+                fill:$dark-violet;
+                align-items: center;
+                
+            }
+          }
+       
     }
+    .AmountCategory{
+        align-items: center;
+        span{
+            font: normal 1.125rem $font-title;
+            margin-left: 1rem;
+        }
+       
+
+    }
+  
     
 }

@@ -307,7 +307,7 @@ export const useNewSavingsGoals = create((set) => ({
             amount: 0,
             total: newData.amount_savings,
             title: newData.name_savings,
-            image: newData.image_savings,
+            image: newData.image_savings,            
         }
         ]
     }))

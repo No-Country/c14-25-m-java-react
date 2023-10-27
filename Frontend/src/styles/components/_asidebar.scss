@@ -1,14 +1,14 @@
 .asidebar-container {
     width: 362px;
     height: 100vh;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
     border: 1px;
     background-color: $white-color;
     position: sticky;
     top: 0;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 5rem;
 
     @media (max-width: 1150px) {
         width: 80px;

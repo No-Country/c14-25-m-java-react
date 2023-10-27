@@ -1,0 +1,51 @@
+@media screen and (max-width: 710px) {
+    .cardGraphics-article {
+        .cardGraphics-article-div {
+            .cardGraphics-article-div-section {
+                width: 100%;
+            }
+        }
+    }
+
+    .graphicsAndList{
+        justify-content: center;
+        .Graphic {
+            
+            background-color: aquamarine;
+        }
+
+    }
+    .List{
+        .ListDetail{
+            li{
+                font: normal normal 600 2vw "Inter", sans-serif;
+
+            }
+
+        }
+        
+    }
+    .Amount{
+        li{
+            
+                font: normal 2vw $font-title;
+        }
+        .AmountType{
+            text-align: left;
+            font: 500 1rem $font-title;
+        }
+        .AmountCategory{
+          span{
+            font: 600 1rem $font-title;
+            
+            color: $dark-violet;
+            background-color: $dark-violetRGBA;
+            border-radius:20px ;
+            padding: 0.2rem 1rem 0.2rem 1rem;
+          }
+        }
+       
+
+    }
+    
+}

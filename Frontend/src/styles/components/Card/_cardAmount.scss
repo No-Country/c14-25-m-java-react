@@ -1,20 +1,33 @@
-.CardAmount{
-    
+.CardAmount{    
     background-color: $white-color;
     border: $card-border;
-    border-radius: $card-borderRadius;
+    border-radius: $card-borderRadius; 
+    padding: 1%;
+    //width: 20rem;
     width: 30%;
-    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     
     p{
+      
         font: $heading-fontsize-s;
+
         font-weight: bold;
-        margin:2rem 1rem ;
+        //font-size:  1.25vw;
+        font-size:clamp(1rem, 2vw, 1.5rem);
+        margin:1% ;
         align-items: center;
+        width: 100%;
+        padding: 5%;
+       
         span{
             font:$heading-fontsize-m; 
             color:$verde;
-           
+            //font-size:  1.66vw;
+            font-size:clamp(1rem, 2vw, 2rem);
+
         }
         .CardAmount-Gasto{
             color:$red-egreso;

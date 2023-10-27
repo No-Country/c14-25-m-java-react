@@ -5,6 +5,7 @@
     border-radius: $card-borderRadius;
     justify-content: center;
     margin-top: 2rem;
+    width: 100%;    
     
     .ListDetail{
     display: flex;
@@ -13,13 +14,21 @@
     background-color: $white-color;
     border: $card-border;
     border-radius: $card-borderRadius;
-    margin:  0 1rem 0 1rem;
+    
     align-items: center;
-    padding: 1rem ;
+    padding:  1.5%;
     background-color: #F4F4F4;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    text-align: center;
     li{
         font: $heading-fontsize-xs;   
      font-weight: bold;
+    }
+    .nombre{
+        text-align: left;
     }
     }
 }

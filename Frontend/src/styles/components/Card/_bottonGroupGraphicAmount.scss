@@ -1,0 +1,68 @@
+.BottonGGA {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+ 
+  button {
+    border: $card-border;
+    padding: 1rem;
+    font: normal normal 600 1rem $font-title;   
+    cursor: pointer;
+    &:first-child {
+      border-top-left-radius: $card-borderRadius;
+      border-bottom-left-radius: $card-borderRadius;
+      &:hover {
+        background-color: $blue-income;
+        border-color: $blue-income;
+        color: $white-color;
+      }
+      &:active {
+        
+        background: $blue-income;
+        border-color: $blue-income;
+        color: $white-color;
+      }
+      &:focus{ 
+        
+        background: $blue-income;
+        border-color: $blue-income;
+        color: $white-color;
+      }
+      &.blue {
+        background: $blue-income;
+        border-color: $blue-income;
+        color: $white-color;
+       
+      } 
+    }
+    &:last-child {
+      border-top-right-radius: $card-borderRadius;
+      border-bottom-right-radius: $card-borderRadius;
+      &:hover {
+        background-color: $red-egreso;
+        border-color: $red-egreso;
+        color: $white-color;
+      }
+      &:active {
+        
+        background: $red-egreso;
+        border-color: $red-egreso;
+        color: $white-color;
+      }
+      &:focus{
+       
+        background: $red-egreso;
+        border-color: $red-egreso;
+        color: $white-color;
+
+      }
+      &.red{ 
+        background: $red-egreso;
+        border-color: $red-egreso;
+        color: $white-color;        
+      
+        }
+    }
+  }
+}
