@@ -1,9 +1,12 @@
-
+import {Helmet} from "react-helmet"; 
 
 const HistoricalReports = () => {
     return (
       <>
-      <div>HistoricalReports</div>
+      <Helmet>
+      <title>Reportes historicos | Presupuesto claro</title>
+      </Helmet>
+
    
 
 

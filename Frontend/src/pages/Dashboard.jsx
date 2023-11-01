@@ -4,84 +4,78 @@ import CardGraphics from "../components/Card/CardGraphics";
 import Graphic from "../components/Card/Graphic";
 import Botton from "../components/Botton";
 import { useState } from "react";
-import BottonGroupDate from "../components/Card/BottonGroupDate";
+import BottonGroupDateDWM from "../components/Card/BottonGroupDateDWM";
+import {Helmet} from "react-helmet"; 
+import ButtonIncomeEgress from "../components/Card/ButtonIncomeEgress";
+import { useAmountDashboard } from "../services/useAmountDashboard";
+import { useEffect } from "react";
 const Dashboard = () => {
-  const montos = [
-    {
-      id: 1,
-      name: "valentino",
-      income: [{ salary: 150000 }, { bonus: 20000 }],
-      egress: [{ spend: 100000 }],
-    },
-  ];
-  const [amount, setAmount] = useState(montos[0].income);
-  const [changeClass, setChangeClass]=useState("blue")
+  
+  const {dbE, increaseDBE, dbI, increaseDBI} = useAmountDashboard();
 
-  function income() {
-    setAmount(montos[0].income);
+  const [amount, setAmount] = useState(dbI);
+  const [changeClass, setChangeClass]=useState(true)
+  const[option,setOption]=useState("")
+  function handleChangeClass() {
+    setChangeClass(!changeClass)    
+}
+useEffect(
+  ()=>{
+    option=="income"?setAmount(dbI):setAmount(dbE)
+},[option,dbI,dbE])
+ 
+function income() {
+  setOption("income")
+    setAmount(dbI);
     
    
-    setChangeClass("blue")
+    handleChangeClass()
     
   }
 
   function egress() {
-    setAmount(montos[0].egress);
-
-      setChangeClass("red")
+    setOption("egress")
+    setAmount(dbE);
+    
+    handleChangeClass()
     
     
   }
-
+  
   return (
+    
+    
+   
     <section className="dashboard">
+      <Helmet>
+      <title>Dashboard | Presupuesto claro</title>
+      </Helmet>
+    
+    
       <article className="dashboard-first-article">
-        <CardAmount egreso={true} />
-        <CardAmount egreso={false} />
-        <CardAmount egreso={false} />
+        <CardAmount  />       
+        
       </article>
 
       <article className="dashboard-second-article">
         <div className="cardGraphics-div">
           <h2>Mes</h2>
-          <Botton />
+          <Botton amount={amount}  changeClass={changeClass} income={ income} egress={ egress} />
         </div>
         <section className="dashboard-second-article-section">
           <div className="BottonGroup">
-            <BottonGroupDate />
+            <BottonGroupDateDWM />
           </div>
-
-          <div className="tabs">
-            <button
-              onClick={() => {
-                income();
-              }}
-              className={"blue"==changeClass &&"blue"}
-            >
-              Ingreso{" "}
-              {amount.map((p) => {
-                return <span>{p.spend || p.salary}</span>;
-              })}
-            </button>
-            <button
-              onClick={() => {
-                egress();
-              } }
-              className={"red"==changeClass &&"red" }
-            >
-              Egreso
-            </button>
-          </div>
-
-          <CardGraphics data={amount} />
+          <ButtonIncomeEgress amount={amount} changeClass={changeClass} income={ income} egress={ egress} />         
+          <CardGraphics amount={amount} />
         </section>
       </article>
 
       <h2>Meses anteriores</h2>
       <article className="dashboard-third-article">
-        <Graphic p={null}datas={amount} className={changeClass}/>
-        <Graphic p={null}datas={amount} className={changeClass}/>
-        <Graphic p={null}datas={amount} className={changeClass}/>
+        <Graphic p={null}amount={amount} changeClass={changeClass}  income={ income} egress={ egress} />
+        <Graphic p={null}amount={amount} changeClass={changeClass}  income={ income} egress={ egress} />
+        <Graphic p={null}amount={amount} changeClass={changeClass}  income={ income} egress={ egress} />
       </article>
     </section>
   );

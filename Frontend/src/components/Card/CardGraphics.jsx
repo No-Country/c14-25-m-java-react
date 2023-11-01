@@ -3,8 +3,8 @@ import Graphic from "./Graphic"
 import Amount from "./Amounts"
 
 
-function CardGraphics({data}) {
-    console.log(data)
+function CardGraphics({amount}) {
+    console.log(amount[4])
     
    
     
@@ -15,15 +15,13 @@ function CardGraphics({data}) {
                 <div className="cardGraphics-article-div" >
                    
                     <div className="graphicsAndList">
-                    <Graphic datas={data} />
+                    <Graphic amount={amount} />
                     <section className="cardGraphics-article-div-section">
-                        <Amount data={data}/>
-                        <Amount data={data} />
-                        <Amount data={data} />
+                        <Amount amount={amount}/>                      
                     </section>
                     </div>
                 </div>
-                <List data={data}  />
+                <List amount={amount}  />
             </article>
 
         </>

@@ -57,7 +57,7 @@ const Header = () => {
         <header className="header-container" onClick={handleSettignsOptions}>
 
             <section className="header-section-title">
-                <h2>Dashboard</h2>
+                <h2>{localStorage.getItem("title")}</h2>
                 <p>{todayFormated + " - " + obtenerHoraEnFormato12Horas()}</p>
             </section>
 

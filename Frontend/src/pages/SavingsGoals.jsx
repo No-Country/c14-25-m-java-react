@@ -2,6 +2,7 @@ import AreaChartComponent from "../components/AreaChartComponent"
 import CardSavingGoal from "../components/CardSavingGoal"
 import DefaultSectionLayout from "../components/DefaultSectionLayout"
 import { useNewSavingsGoals } from "../services/useNewSavingsGoals"
+import {Helmet} from "react-helmet"; 
 
 const SavingsGoals = () => {
   
@@ -9,6 +10,9 @@ const SavingsGoals = () => {
 
   return (
     <>
+      <Helmet>
+      <title>Metas de ahorro | Presupuesto claro</title>
+      </Helmet>
       <DefaultSectionLayout title={"Ahorro"}>
 
         <section className="savingsGoals-container">

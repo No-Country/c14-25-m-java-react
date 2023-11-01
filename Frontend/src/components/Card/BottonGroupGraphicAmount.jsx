@@ -1,9 +1,9 @@
 
-function BottonGroupGraphicAmount({className}){
+function BottonGroupGraphicAmount({changeClass, income, egress, }){
     return(
         <div className="BottonGGA">
-            <button className={"blue"==className &&"blue"} >Ingreso: $ 450.038</button>
-            <button className={"red"==className &&"red"} >Egreso: $ 450.038</button>
+            <button onClick={income} className={changeClass &&"blue"} >Ingreso: $ 450.038</button>
+            <button onClick={egress} className={!changeClass &&"red"} >Egreso: $ 450.038</button>
         </div>
     )
 }

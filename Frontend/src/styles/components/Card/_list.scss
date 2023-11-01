@@ -3,9 +3,10 @@
     flex-direction: column;
     background-color: $white-color;  
     border-radius: $card-borderRadius;
-    justify-content: center;
-    margin-top: 2rem;
+    justify-content: center;    
+    
     width: 100%;    
+    gap: 1rem;
     
     .ListDetail{
     display: flex;

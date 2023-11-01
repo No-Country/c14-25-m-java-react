@@ -1,108 +1,31 @@
-.dashboard{     
+.dashboard {
+  width: 100%;
+  .dashboard-first-article {
+    display: inline-flex;
+    align-items: center;
     width: 100%;
-    .dashboard-first-article{ 
-        display: flex; 
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 100%;
-        margin-bottom:4rem ;
-        
-       } 
-       .dashboard-second-article{
-        
-        margin-bottom: 6rem;
-        .dashboard-second-article-section{
-            background-color: $white-color;
-            border: $card-border;
-            border-radius: $card-borderRadius;
-            padding: 2.5rem;
-            .tabs{
-                width: 100%;
-                display: flex;
-                justify-content: space-around;
-                border-bottom: 1px solid $gray-border-color;
-                align-items: center;
-                button{
-                    font: $heading-fontsize-m;
-                    width: 100%;
-                    background-color: transparent;
-                    border: none;
-                    border-collapse: collapse;                  
-                    cursor: pointer;
-                    padding-bottom: 1rem;
-                    font-weight: 700;
-
-                    &:first-child{
-                      border: 10px solid rgba(255, 0, 0, 0);
-                      
-                      &:default {
-                        background: $background-buttonDisable;//revisar
-                      }
-                      &:hover {
-                        color: $blue-income;
-                        border-color: rgba(255, 0, 0, 0)  rgba(255, 0, 0, 0) $blue-income rgba(255, 2, 2, 0)  ;
-                      }
-                      &:active {
-                        border-color: rgba(255, 0, 0, 0)  rgba(255, 0, 0, 0)$blue-income rgba(255, 2, 2, 0)  ;
-                      }
-                      &:focus {
-                        color: $blue-income;
-                        border-color: rgba(255, 0, 0, 0)  rgba(255, 0, 0, 0) $blue-income rgba(255, 2, 2, 0)  ;
-                      }
-                      &.blue {
-                        color: $blue-income;
-                        border-color: rgba(255, 0, 0, 0)  rgba(255, 0, 0, 0) $blue-income rgba(255, 2, 2, 0)  ;
-                      } 
-                      
-                    }
-                    &:last-child {
-                      border: 10px solid rgba(255, 0, 0, 0) ;
-                    
-                      &:default {
-                        background: $background-buttonDisable;
-                      }
-                      &:hover {
-                        color: $red-egreso;
-                        border-color: rgba(255, 0, 0, 0)  rgba(255, 0, 0, 0) $red-egreso rgba(255, 2, 2, 0)  ;
-                      }
-                      &:active {
-                        border-color: rgba(255, 0, 0, 0)  rgba(255, 0, 0, 0) $red-egreso rgba(255, 2, 2, 0)  ;
-                      }
-                      &:focus {
-                        color: $red-egreso;
-                        border-color: rgba(255, 0, 0, 0)  rgba(255, 0, 0, 0) $red-egreso rgba(255, 2, 2, 0)  ;
-                      }                      
-                      &.red{ 
-                        color: $red-egreso;
-                        
-                        border-color: rgba(255, 0, 0, 0)  rgba(255, 0, 0, 0) $red-egreso rgba(255, 2, 2, 0)  ;   
-                        }
-                
-
-                     }
-                     
-                }
-               
-                 
-            }
-        }
-        
-
-       }
-       h2{
-       
-        font: $heading-fontsize-xxl;
-        margin-bottom: 2rem;
-       }
-       .dashboard-third-article{        
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
-        gap: 2rem;        
-        margin-bottom:1rem ;
-        width: 100%;
-        
-       }
-      
-    
-    
+    margin-bottom: 4rem;
+    gap: 1.875rem;
+    }
+  .dashboard-second-article {
+    margin-bottom: 6rem;
+    .dashboard-second-article-section {
+      background-color: $white-color;
+      border: $card-border;
+      border-radius: $card-borderRadius;
+      padding: 2.5rem;
+     
+    }
+  }
+  h2 {
+    font: $heading-fontsize-xxl;
+    margin-bottom: 2rem;
+  }
+  .dashboard-third-article {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
 }

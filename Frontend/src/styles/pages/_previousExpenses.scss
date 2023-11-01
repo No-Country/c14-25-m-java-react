@@ -1,0 +1,24 @@
+.analysis-first-article {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 4rem;
+    gap: 1.875rem;
+    }
+.analysis-second-article{
+    width: 100%;
+    background-color: $white-color;
+    border: $card-border;
+    border-radius: $card-borderRadius;
+    padding: 2.5rem;
+    margin-top: .5rem;
+}   
+.analysis-third-article{
+    width: 100%;
+    background-color: $white-color;
+    border: $card-border;
+    border-radius: $card-borderRadius;
+    padding: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+} 

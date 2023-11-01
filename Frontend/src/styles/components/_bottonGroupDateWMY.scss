@@ -1,12 +1,12 @@
-.BottonGroup{
-    display: flex;
+.BottonGroupDateWMY{
+    display: inline-flex;
     justify-content: space-between;
     align-items: center;
     h3{
       font: $heading-fontsize-l;
-      padding: 1rem;
+      margin: 2%;
      }
-    #Group {
+    .GroupDateWMY {
        display: flex;
        width: 20%;
        align-items: center;
@@ -35,14 +35,13 @@
           &:first-child{
             border-top-left-radius:$card-borderRadius;
             border-bottom-left-radius:$card-borderRadius;
-            &.dateDay{
+            &.dateWeek{
               background: $light-violet;
               border-color: $light1-violet;
               font-weight: 600;
-
             } 
           }
-          &.dateWeek{
+          &.dateMonth{
             background: $light-violet;
             border-color: $light1-violet;
             font-weight: 600;
@@ -51,7 +50,7 @@
           &:last-child {
             border-top-right-radius: $card-borderRadius;
             border-bottom-right-radius: $card-borderRadius;
-            &.dateMonth{
+            &.dateYear{
               background: $light-violet;
               border-color: $light1-violet;
               font-weight: 600;
@@ -60,6 +59,5 @@
           }
          
         }
-      }
+    }
 }
-

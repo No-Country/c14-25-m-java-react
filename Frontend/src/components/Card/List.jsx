@@ -1,5 +1,5 @@
 import Amount from "./Amounts"
-function List({data}){
+function List({amount}){
 
 return(
     <div className="List">
@@ -14,9 +14,7 @@ return(
         
     </ul>
     
-    <Amount p={true} data={data}/>
-    <Amount p={true} data={data}/>
-    <Amount p={true} data={data}/>
+    <Amount p={true} amount={amount}/>   
 
     </div>
 )

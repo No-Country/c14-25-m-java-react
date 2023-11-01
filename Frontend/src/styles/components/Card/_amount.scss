@@ -5,7 +5,7 @@
     border: $card-border;    
     border-style:none none solid none;
     align-items: center;
-    padding:  1.5%;
+    padding: 1% 1.5%;
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(7, 1fr);
@@ -39,10 +39,17 @@
         button{
             background-color: rgba(145, 36, 36, 0);
             border-color: rgba(0, 0, 0, 0);
+            padding: 1%;
+            align-items: center;
             cursor: pointer;
             &:hover{
+                
+                border-radius: 10px;
+                //border-color:  $light-violet;
+                background-color: rgba(87, 6, 172, 0.2);
                 path{
                     fill: $dark-violet;
+                    
                 }
             }
         }
@@ -52,6 +59,9 @@
             
             
         }
+    }
+    &:last-child{
+        border: none;
     }
 }
 .AmountDetail{
@@ -76,7 +86,7 @@
         svg {       
             
             circle{ 
-                fill:$dark-violet;
+                
                 align-items: center;
                 
             }

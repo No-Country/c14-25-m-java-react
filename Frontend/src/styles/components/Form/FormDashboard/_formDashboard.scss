@@ -30,68 +30,7 @@ form.formDashboard-form {
           cursor: pointer;
       }
   }
-  .formDashboard-modalTabs{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid $gray-border-color;
-    align-items: center;
-    
-    button{
-        font: $heading-fontsize-xs;
-        font-weight: 700;
-        width: 100%;
-        background-color: transparent;
-        border: none;
-        border-collapse: collapse;                  
-        cursor: pointer;
-        padding-bottom: 0.2rem;
-       
-
-        &:first-child{
-          border: 10px solid rgba(255, 0, 0, 0);
-         
-          
-          &:hover {
-            color: $blue-income;
-            border-color: rgba(255, 0, 0, 0)  rgba(255, 0, 0, 0) $blue-income rgba(255, 2, 2, 0)  ;
-          }
-          &:active {
-            border-color: rgba(255, 0, 0, 0)  rgba(255, 0, 0, 0)$blue-income rgba(255, 2, 2, 0)  ;
-          }
-          &:focus {
-            color: $blue-income;
-            border-color: rgba(255, 0, 0, 0)  rgba(255, 0, 0, 0) $blue-income rgba(255, 2, 2, 0)  ;
-          }
-          &.blue {
-            color: $blue-income;
-            border-color: rgba(255, 0, 0, 0)  rgba(255, 0, 0, 0) $blue-income rgba(255, 2, 2, 0)  ;
-          } 
-        }
-        &:last-child {
-          border: 10px solid rgba(255, 0, 0, 0) ;
-        
-          
-          &:hover {
-            color: $red-egreso;
-            border-color: rgba(255, 0, 0, 0)  rgba(255, 0, 0, 0) $red-egreso rgba(255, 2, 2, 0)  ;
-          }
-          &:active {
-            border-color: rgba(255, 0, 0, 0)  rgba(255, 0, 0, 0) $red-egreso rgba(255, 2, 2, 0)  ;
-          }
-          &:focus {
-            color: $red-egreso;
-            border-color: rgba(255, 0, 0, 0)  rgba(255, 0, 0, 0) $red-egreso rgba(255, 2, 2, 0)  ;
-          }
-          &.red{
-            color: $red-egreso;
-            border-color: rgba(255, 0, 0, 0)  rgba(255, 0, 0, 0) $red-egreso rgba(255, 2, 2, 0)  ;
-          } 
-
-        }
-        
-    }
-  }
+ 
   section.formDashboard-section {
       width: 100%;
       display: flex;

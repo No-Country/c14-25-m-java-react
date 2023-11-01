@@ -19,10 +19,10 @@ const Asidebar = () => {
           </section>
           <nav>
             <ul>
-              <NavLink to={"/"}><li > <SvgGridView /> <span>Dashboard</span> </li></NavLink>
-              <NavLink to={"/previous-expenses"}><li> <SvgPreviousExpenses /> <span>Gastos anteriores</span></li></NavLink>
-              <NavLink to={"/savings-goals"}><li> <SvgSavingsGoals /> <span>Metas de ahorro</span></li></NavLink>
-              <NavLink to={"/historical-reports"}><li > <SvgHistoricalReports /> <span>Reportes históricos</span> </li></NavLink>
+              <NavLink onClick={()=>{localStorage.setItem("title", "Dashboard")}} to={"/"}><li > <SvgGridView /> <span>Dashboard</span> </li></NavLink>
+              <NavLink onClick={()=>{localStorage.setItem("title", "Análisis")}}  to={"/analysis"}><li> <SvgPreviousExpenses /> <span>Análisis</span></li></NavLink>
+              <NavLink onClick={()=>{localStorage.setItem("title", "Metas de ahorro")}} to={"/savings-goals"}><li> <SvgSavingsGoals /> <span>Metas de ahorro</span></li></NavLink>
+              <NavLink onClick={()=>{localStorage.setItem("title", "Reportes históricos")}} to={"/historical-reports"}><li > <SvgHistoricalReports /> <span>Reportes históricos</span> </li></NavLink>
             </ul>
           </nav>
         </aside>
