@@ -177,7 +177,7 @@ console.log(changeClass)
                     
                     <CustomInput
                     register={register}
-                    name={"friends_egress"}//VER EGRESO E INGRESO
+                    name={"shared_egress"}//VER EGRESO E INGRESO
                     placeholder={"Agregar persona"}
                     errors={errors}
                     setValue={setValue}

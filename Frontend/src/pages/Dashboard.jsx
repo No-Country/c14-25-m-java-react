@@ -15,7 +15,7 @@ const Dashboard = () => {
 
   const [amount, setAmount] = useState(dbI);
   const [changeClass, setChangeClass]=useState(true)
-  const[option,setOption]=useState("")
+  const[option,setOption]=useState("income")
   function handleChangeClass() {
     setChangeClass(!changeClass)    
 }
