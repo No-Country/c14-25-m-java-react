@@ -4,11 +4,14 @@ import CustomDropdown from './CustomDropdown';
 import CustomInputRadio from './CustomInputRadio';
 import { useForm } from "react-hook-form"
 import { useNewSavingsGoals } from '../../services/useNewSavingsGoals';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import CustomInputFile from './CustomInputFile';
+import CustomAddOption from './CustomAddOption';
+import axios from 'axios';
 
 const FormNewSavingsGoals = ({ handleStateModal }) => {
     const { increaseDB, db } = useNewSavingsGoals();
+    const [urlImage, setUrlImage] = useState("");
 
     useEffect(() => {
         console.log("DB: ", db)
@@ -20,11 +23,13 @@ const FormNewSavingsGoals = ({ handleStateModal }) => {
         watch,
         setValue,
         reset,
+        resetField,
         formState: { errors, isValid },
     } = useForm()
 
-    const onSubmit = (dataForm) => {
-        increaseDB(dataForm)
+    const onSubmit = async (dataForm) => {
+        const response = await axios.post("https://api.cloudinary.com/v1_1/djlxueouv/image/upload", watch()["image_savings"])
+        increaseDB({...dataForm, image_savings: response.data.secure_url})
         handleStateModal()
     }
 
@@ -49,6 +54,18 @@ const FormNewSavingsGoals = ({ handleStateModal }) => {
         '6 Meses',
         '12 Meses'
     ]
+
+    const friends = ["Guido", "Valentino", "Denise", "Alejandro"];
+
+    useEffect(()=> {
+
+        if(watch()["shared_savings"] != undefined && watch()["friends_savings"] != undefined) {
+            if(watch()["shared_savings"] == "no") {
+                resetField("friends_savings");
+                setValue("friends_savings", [])
+            }
+        }
+    }, [watch()["shared_savings"]])
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='newSavingsGoals-form' action="">
@@ -106,6 +123,13 @@ const FormNewSavingsGoals = ({ handleStateModal }) => {
                             value={"no"}
                         />
                     </section>
+
+                    {
+                        watch()["shared_savings"] == "si"?
+                            <CustomAddOption watch={watch} register={register} name={"friends_savings"} title={"Seleccione a sus amigos"} options={friends}/>
+                        :
+                            null
+                    }
                 </section>
 
             </section>

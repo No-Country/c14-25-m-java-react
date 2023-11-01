@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import SvgExpandMoreDropdown from '../../assets/icons/SvgExpandMoreDropdown';
 import SvgClose from '../../assets/icons/SvgClose';
 
-const CustomDropdown = ({ name, setValue, register, placeholder, watch, dataOptions }) => {
+const CustomDropdown = ({ name, setValue, register, placeholder, watch = null, dataOptions }) => {
     const [activeDropdown, setActiveDropdown] = useState(false);
     const [placeholderSelected, setPlaceholderSelected] = useState(placeholder);
     const [inputData, setInputData] = useState("");
