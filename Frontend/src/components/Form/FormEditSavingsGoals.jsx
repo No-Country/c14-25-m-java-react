@@ -134,6 +134,7 @@ const FormEditSavingsGoals = ({ handleStateModal, id }) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='newSavingsGoals-form' action="">
 
+            <section>
             <header className='newSavingsGoals-header'>
                 <h3>Editar meta de ahorro</h3>
 
@@ -173,6 +174,7 @@ const FormEditSavingsGoals = ({ handleStateModal, id }) => {
                     />
                 </section>
 
+            </section>
             </section>
 
             <section className='newSavingGoals-content'>

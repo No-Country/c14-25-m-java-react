@@ -9,7 +9,7 @@ const SavingsGoals = () => {
 
   return (
     <>
-      <DefaultSectionLayout title={"Ahorro"}>
+      <DefaultSectionLayout title={"Ahorros"}>
 
         <section className="savingsGoals-container">
           <AreaChartComponent />
