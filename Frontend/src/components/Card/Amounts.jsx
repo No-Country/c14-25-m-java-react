@@ -3,17 +3,19 @@ import SvgPhotoCamera from "../../assets/icons/SvgPhotoCamera";
 import SvgContentCopy from "../../assets/icons/SvgContentCopy";
 import SvgDelete from "../../assets/icons/SvgDelete";
 import SvgElipse from "../../assets/icons/SvgElipse";
-function Amount({ p, amount }) {
+
+
+function Amount({ p, amount, delet }) {
  
   const COLORS = ['#F24822','#0088FE',  '#5706AC','#0D99FF',  '#FFA629','#FFCD29',"#14AE5C", "#7E07FA"];
   const backgroundColor=['#f2482233','#0088FE33','#5706ac33','#0d99ff33','#ffa62933','#ffcd2933','#14ae5c33', '#7E07FA33']
-  console.log (p)
+
   return (
     <>
       {p ? (
         
           amount?.map((item,index) => {
-           
+           console.log(index,item)
           return (
 
             <ul className="Amount" key={item.id}>
@@ -36,7 +38,7 @@ function Amount({ p, amount }) {
               <button>
                 <SvgContentCopy />
               </button>
-              <button>
+              <button onClick={()=>{delet(amount,index)}}>
                 <SvgDelete />
               </button>
             </li>

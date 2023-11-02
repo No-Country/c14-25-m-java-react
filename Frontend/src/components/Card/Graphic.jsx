@@ -1,7 +1,7 @@
 import { PieChart, Pie, Sector, Cell,ResponsiveContainer, Tooltip, LabelList } from "recharts";
 import BottonGroupGraphicAmount from "./BottonGroupGraphicAmount";
 import { useAmountDashboard } from "../../services/useAmountDashboard";
-function Graphic({p, amount, changeClass,  income, egress}){
+function Graphic({p, amount, changeClass,  income, egress, title}){
 
  
   const COLORS = ['#F24822','#0088FE',  '#5706AC','#0D99FF',  '#FFA629','#FFCD29',"#14AE5C", "#7E07FA"];
@@ -38,6 +38,7 @@ const PieChartWithPaddingAngles=(
 </PieChart>
 </ResponsiveContainer>)
 
+
 return(
     <> 
      
@@ -51,7 +52,7 @@ return(
     : 
 
     <div className="Graphic-date">
-    <h3>Julio <button>Ver todo</button></h3>
+    <h3>{title} <button>Ver todo</button></h3>
     
     <div className="Graphic">{PieChartWithPaddingAngles}</div>
     <BottonGroupGraphicAmount changeClass={changeClass}  income={ income} egress={ egress} />

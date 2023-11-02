@@ -2,19 +2,19 @@ import { useState } from "react"
 
 
 function BottonGroupDateDWM() {
-    const [date, setDate]=useState("Octubre")
+    const [date, setDate]=useState("Noviembre")
     const [changeClass, setChangeClass]=useState("dateMonth")
   console.log(changeClass)
     function handleClick(fecha){
         
         if(fecha === "day"){
-           setDate("26 de octubre")
+           setDate("3 de noviembre")
            setChangeClass("dateDay")
         }else         if(fecha === "week"){
-           setDate("23 al 29 de octubre")
+           setDate("30 de oct al 5 de noviembre")
            setChangeClass("dateWeek")
         }else        if(fecha === "month"){
-           setDate("Octubre")
+           setDate("Noviembre")
            setChangeClass("dateMonth")
         }
    }

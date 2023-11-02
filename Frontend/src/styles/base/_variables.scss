@@ -5,16 +5,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 $font-title: 'Inter', sans-serif;
-$font-body: 'Atkinson Hyperlegible', sans-serif;
+$font-body: 'Inter', sans-serif;
 
 /*Heading Font sizes**/
-$heading-fontsize-xxxl: normal normal 600 3.5rem $font-title;
-$heading-fontsize-xxl: normal normal bold 3rem $font-title;
-$heading-fontsize-xl: normal normal bold 2.5rem $font-title;
-$heading-fontsize-l: normal normal 700 2.25rem $font-title;
-$heading-fontsize-m: normal normal 500 2rem $font-title;
-$heading-fontsize-s: normal normal 500 1.5rem $font-title;
-$heading-fontsize-xs: normal normal 500 1.25rem $font-title;
+$heading-fontsize-xxxl: normal normal 600 2.5rem $font-title;
+$heading-fontsize-xxl: normal normal bold 2.25rem $font-title;
+$heading-fontsize-xl: normal normal bold 2rem $font-title;
+$heading-fontsize-l: normal normal 700 1.75rem $font-title;
+$heading-fontsize-m: normal normal 500 1.5rem $font-title;
+$heading-fontsize-s: normal normal 500 1.25rem $font-title;
+$heading-fontsize-xs: normal normal 500 1rem $font-title;
 
 
 /*Body Font sizes*/
