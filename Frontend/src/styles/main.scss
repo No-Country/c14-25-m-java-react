@@ -6,7 +6,7 @@
 //Components
 @import "./components/defaultLayout";
 @import "./components/header";
-@import "./pages/dashboard";
+
 @import "./components/button";
 @import "./pages/register";
 
@@ -30,6 +30,23 @@
 @import "./components/customInputFile";
 @import "./components/defaultLayoutFormUser";
 @import "./components/areaChartComponent";
+@import "./components/Card/bottonGroup";
+@import "./components/Card/bottonGroupGraphicAmount";
+@import "./components/Card/buttonIncomeEgress";
+
 
 //Register Form
 @import "./components/registerForm";
+
+//Dashboard Form
+@import "./components/Form/FormDashboard/formDashboard";
+
+//PreviousExpenses
+@import "./components/bottonGroupDateWMY";
+
+//Pages
+@import "./pages/dashboard";
+@import "./pages/previousExpenses";
+
+// Media queries
+@import "./base/responsive"

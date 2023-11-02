@@ -1,20 +1,24 @@
 .cardGraphics-div{
     display: flex;
     justify-content: space-between;
+    
     margin-bottom: 1rem;
     h2{
         font: $heading-fontsize-xxl;
     }
 } 
 .cardGraphics-article{
-    background-color: $white-color;
-    border: $card-border;
-    border-radius: $card-borderRadius;
-   padding: 1rem;
     .cardGraphics-article-div{
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;    
+        flex-direction: column;
+        .graphicsAndList{
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+        
+        
         .cardGraphics-article-div-section{
             width: 40%;
         }

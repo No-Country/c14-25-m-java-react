@@ -1,12 +1,13 @@
 .addButton{
-    font: bold 18px $font-title;
+    
     background: $background-buttonDefault;
     color: $white-color;
     border:$card-border ; 
     border-radius:$card-borderRadius;
-    padding: 0.5rem;
-    width: 200px;
-    height: 60px;
+    font: $heading-fontsize-xs;
+    cursor: pointer;
+    width: 10rem;
+    height: 4rem;
     
     &:default{
         background: $background-buttonDisable;

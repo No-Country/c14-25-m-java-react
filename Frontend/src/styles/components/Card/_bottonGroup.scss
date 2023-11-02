@@ -1,0 +1,65 @@
+.BottonGroup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3{
+      font: $heading-fontsize-l;
+      padding: 1rem;
+     }
+    #Group {
+       display: flex;
+       width: 20%;
+       align-items: center;
+       justify-content: center;
+        button{
+          font:  normal normal 500 1rem $font-title;
+          background-color: #c8c8c833;
+          color:$body-black;
+          border: $card-border;
+          width: 100%;
+         padding: 1rem 0;
+         cursor: pointer;
+          &:default {
+            background: $background-buttonDisable;
+          }
+          &:hover {
+            background: $light-violet;
+            border-color: $light1-violet;
+          }
+          &:active {
+            background: $light-violet;
+          }
+          &.active {
+            background: $light-violet;
+          } //preguntar Guido
+          &:first-child{
+            border-top-left-radius:$card-borderRadius;
+            border-bottom-left-radius:$card-borderRadius;
+            &.dateDay{
+              background: $light-violet;
+              border-color: $light1-violet;
+              font-weight: 600;
+
+            } 
+          }
+          &.dateWeek{
+            background: $light-violet;
+            border-color: $light1-violet;
+            font-weight: 600;
+
+          } 
+          &:last-child {
+            border-top-right-radius: $card-borderRadius;
+            border-bottom-right-radius: $card-borderRadius;
+            &.dateMonth{
+              background: $light-violet;
+              border-color: $light1-violet;
+              font-weight: 600;
+
+            } 
+          }
+         
+        }
+      }
+}
+

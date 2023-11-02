@@ -8,7 +8,7 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 
 function App() {
-
+localStorage.setItem("title", "Dashboard")
   return (
     <>
 
@@ -19,7 +19,7 @@ function App() {
 
           <Route index element={<Dashboard />} />
 
-          <Route path="/previous-expenses" element={<PreviousExpenses />} />
+          <Route path="/analysis" element={<PreviousExpenses />} />
 
           <Route path="/savings-goals" element={<SavingsGoals />} />
 

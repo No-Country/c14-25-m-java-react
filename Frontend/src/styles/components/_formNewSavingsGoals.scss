@@ -89,6 +89,9 @@ form.newSavingsGoals-form {
             color: $white-color;
             font: $heading-fontsize-xs;
             cursor: pointer;
+            &:disabled {
+                background: $background-buttonDisable;
+              }
         }
 
         button[type="reset"] {
