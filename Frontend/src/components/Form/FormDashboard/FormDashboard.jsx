@@ -76,6 +76,7 @@ console.log(changeClass)
 
 {changeClass=== true?
                  <>
+                 
                  <section className='formDashboard-section'>
  
                  <CustomInput
@@ -236,14 +237,14 @@ console.log(changeClass)
                 <button disabled={!isValid } type="submit">Confirmar</button>
                  
             </section>
-            <code>
-            <pre>
-                {JSON.stringify(watch(),null,2)}
-            </pre>
-        </code>
+           
         </form>
     )
 }
 
 export default FormDashboard
-
+{/*<code>
+<pre>
+    {JSON.stringify(watch(),null,2)}
+</pre>
+</code>*/}
