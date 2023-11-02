@@ -8,7 +8,7 @@ const CustomInputRadio = ({ id, name, value, title, register}) => {
                     type="radio"
                     name={name}
                     id={id}
-                    value={value}
+                    value={value}//Aca esta el tema al cargar el input se carga como null al no dar click pense en algo asi {value== null? "no":value}
                     {...register(name, { required: true })} 
                 />
 

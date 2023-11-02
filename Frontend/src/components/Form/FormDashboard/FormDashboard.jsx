@@ -72,7 +72,7 @@ console.log(changeClass)
                     <SvgClose />
                 </span>
             </header>
-            <ButtonIncomeEgress reset={resetField} changeClass={changeClass} income={ income} egress={ egress} formTrue={true} />        
+            <ButtonIncomeEgress reset={reset} changeClass={changeClass} income={ income} egress={ egress} formTrue={true} />        
 
 {changeClass=== true?
                  <>
@@ -236,6 +236,11 @@ console.log(changeClass)
                 <button disabled={!isValid } type="submit">Confirmar</button>
                  
             </section>
+            <code>
+            <pre>
+                {JSON.stringify(watch(),null,2)}
+            </pre>
+        </code>
         </form>
     )
 }
