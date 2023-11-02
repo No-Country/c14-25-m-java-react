@@ -1,18 +1,28 @@
-export const getAll = (req, res, next) => {
+const db = require('./../database/models');
+
+ const getAll = async (req, res, next) => {
     try {
-        res.status(200).json("Hola desde el listado de metas de ahorro");
+        const savingsGoals = await db.SavingsGoals.findAll(); // Recupera todas las metas de ahorro de la base de datos
+        res.status(200).json(savingsGoals);
     } catch (error) {
         error.statusCode = 500;
         next(error);
     }
 };
 
-
-export const getById = (req, res, next) => {
+ const getById = async (req, res, next) => {
     try {
-        res.status(200).json("Hola desde la meta de ahorro con id "+req.params.id);
+        const id = req.params.id;
+        const savingsGoal = await db.SavingsGoals.findByPk(id); // Busca la meta de ahorro por su ID
+
+        if (savingsGoal) {
+            res.status(200).json(savingsGoal);
+        } else {
+            res.status(404).json("Meta de ahorro no encontrada");
+        }
     } catch (error) {
         error.statusCode = 500;
         next(error);
     }
 };
+module.exports = {getAll, getById}

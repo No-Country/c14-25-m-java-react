@@ -1,9 +1,10 @@
-import express from 'express';
-import { getAll, getById } from '../controllers/savings-goals.controller.js';
+const express = require('express');
+const { getAll, getById } = require('../controllers/savings-goals.controller.js');
+
 
 const router = express.Router();
 
-router.get('', getAll);
+router.get('/', getAll);
 router.get('/:id', getById);
 
-export default router;
+module.exports = router;

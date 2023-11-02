@@ -1,9 +1,9 @@
-import express from 'express';
+const express = require("express");
 const router = express.Router();
 
-import savingsGoalsRoutes from './savings-goals.routes.js';
+const savingsGoalsRoutes = require('./savings-goals.routes.js');
 
 router.use('/savings-goals', savingsGoalsRoutes);
 
 
-export default router;
+module.exports = router;
