@@ -62,6 +62,7 @@ const AreaChartComponent = () => {
                     tickLine={false}
                     tickMargin={40}
                     tick={{ fill: "#666666" }}
+                    
                 />
 
                 <YAxis

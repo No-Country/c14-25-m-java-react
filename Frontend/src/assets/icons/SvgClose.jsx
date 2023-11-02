@@ -2,7 +2,7 @@ import React from 'react'
 
 const SvgClose = () => {
     return (
-        <svg  width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg  width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_29_545" maskUnits="userSpaceOnUse" x="0" y="0" width="44" height="44">
                 <rect width="44" height="44" fill="#D9D9D9" />
             </mask>
