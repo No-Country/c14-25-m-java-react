@@ -30,8 +30,8 @@ const AreaChartComponent = () => {
     const { dbAreaChart } = useNewSavingsGoals()
 
     return (
-        <ResponsiveContainer width={"90%"} height={500}>
-            <AreaChart data={dbAreaChart} >
+        <ResponsiveContainer width={"90%"} height={500} >
+            <AreaChart  data={dbAreaChart}  margin={{ top: 10, right: 30, left: 40, bottom: 40 }}>
                 <CartesianGrid strokeDasharray="0" vertical={false} />
 
                 <Area
@@ -60,7 +60,7 @@ const AreaChartComponent = () => {
                     angle={0}
                     textAnchor="middle"
                     tickLine={false}
-                    tickMargin={10}
+                    tickMargin={40}
                     tick={{ fill: "#666666" }}
                 />
 
@@ -68,7 +68,7 @@ const AreaChartComponent = () => {
                     allowDecimals={false}
                     tickCount={5}
                     tickLine={false}
-                    tickMargin={10}
+                    tickMargin={40}
                     tick={{ fill: "#666666" }}
                 />
 

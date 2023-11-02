@@ -24,7 +24,7 @@ const SavingsGoals = () => {
           {
             db?.map((item) => {
               return (
-                <CardSavingGoal key={item.id} title={item.title} amount={item.amount} total={item.total} image={item.image} />
+                <CardSavingGoal key={item.id} id={item.id} title={item.title} amount={item.amount} total={item.total} image={item.image} />
               )
             })
           }

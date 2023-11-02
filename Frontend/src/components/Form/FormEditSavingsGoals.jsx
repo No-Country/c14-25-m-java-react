@@ -8,14 +8,27 @@ import { useEffect, useState } from 'react';
 import CustomInputFile from './CustomInputFile';
 import CustomAddOption from './CustomAddOption';
 import axios from 'axios';
+import SvgDeleteRed from '../../assets/icons/SvgDeleteRed';
+import Swal from 'sweetalert2'
 
-const FormNewSavingsGoals = ({ handleStateModal }) => {
-    const { increaseDB, db } = useNewSavingsGoals();
-    const [urlImage, setUrlImage] = useState("");
+const FormEditSavingsGoals = ({ handleStateModal, id }) => {
+    const { db, findById, updateDbById, deleteDbById } = useNewSavingsGoals();
 
-    useEffect(() => {
-        console.log("DB: ", db)
-    }, [db])
+    const userData = findById(id, db);
+
+    const initDefaultValues = {
+        name_savings: userData?.title,
+        category_savings: userData?.category,
+        shared_savings: userData?.isShared,
+        friends_savings: userData?.friends,
+        total_savings: userData?.total,
+        time_savings: userData?.time,
+        image_savings: userData?.image,
+        amount_savings: userData?.amount
+    }
+
+    const [defaultValues, setDefaultValues] = useState(initDefaultValues)
+
 
     const {
         register,
@@ -25,16 +38,75 @@ const FormNewSavingsGoals = ({ handleStateModal }) => {
         reset,
         resetField,
         formState: { errors, isValid },
-    } = useForm()
+    } = useForm({
+        defaultValues: {
+            ...defaultValues
+        }
+    })
+
+    useEffect(() => {
+        console.log("WATCH: ", JSON.stringify(watch(), null, 2))
+    }, [db, watch()])
+
+
+    useEffect(() => {
+
+        if (watch()["shared_savings"] != undefined && watch()["friends_savings"] != undefined) {
+            if (watch()["shared_savings"] == "no") {
+                resetField("friends_savings");
+                setValue("friends_savings", [])
+            }
+        }
+    }, [watch()["shared_savings"]])
+
 
     const onSubmit = async (dataForm) => {
-        const response = await axios.post("https://api.cloudinary.com/v1_1/djlxueouv/image/upload", watch()["image_savings"])
-        increaseDB({ ...dataForm, image_savings: response.data.secure_url })
+        console.log("SUBMIT!")
+        console.log(watch()["image_savings"] + "!=" + userData?.image)
+        let imageSavingsGoals = userData?.image
+
+        if (userData.image != watch()["image_savings"]) {
+            let response = await axios.post("https://api.cloudinary.com/v1_1/djlxueouv/image/upload", watch()["image_savings"])
+            imageSavingsGoals = response.data.secure_url;
+        }
+        
+        updateDbById({ ...dataForm, image_savings: imageSavingsGoals, id: id })
+
         handleStateModal()
     }
 
     const handleReset = () => {
-        reset()
+        Swal.fire({
+            title: '¿Estas seguro de deshacer los cambios?',
+            text: "",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#5706AC',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Descartar',
+            cancelButtonText: "Cancelar",
+            customClass: {
+                confirmButton: 'my-confirm-button-class', // Clase CSS para el botón de confirmar
+                cancelButton: 'my-cancel-button-class' // Clase CSS para el botón de cancelar
+            }
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                '¡Cambios descartados correctamente!',
+                '',
+                'success'
+              )
+
+              reset(initDefaultValues)
+            }
+
+            
+          })
+    }
+
+    const handleDelete = () => {
+        deleteDbById({ id: id })
+        handleStateModal()
     }
 
     const category_savings = [
@@ -57,31 +129,55 @@ const FormNewSavingsGoals = ({ handleStateModal }) => {
 
     const friends = ["Guido", "Valentino", "Denise", "Alejandro"];
 
-    useEffect(() => {
 
-        if (watch()["shared_savings"] != undefined && watch()["friends_savings"] != undefined) {
-            if (watch()["shared_savings"] == "no") {
-                resetField("friends_savings");
-                setValue("friends_savings", [])
-            }
-        }
-    }, [watch()["shared_savings"]])
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='newSavingsGoals-form' action="">
 
             <header className='newSavingsGoals-header'>
-                <h3>Nuevo ahorro</h3>
+                <h3>Editar meta de ahorro</h3>
 
                 <span onClick={handleStateModal}>
                     <SvgClose />
                 </span>
             </header>
 
+            <section className='newEditSavingsGoals-image'>
+                <img src={watch()["temporal_image_savings"] || watch()["image_savings"]} alt="" />
+            </section>
+
+            <section className='newSavingGoals-amount'>
+
+                <section className='newSavingGoals-amount-title'>
+                    <h3>Monto ahorrado</h3>
+                    <button onClick={handleStateModal}>
+                        $
+                        <span className='bolder'>{watch()["amount_savings"]?.toLocaleString("es-ES")}</span>
+                        /
+                        {
+                            parseInt(watch()["total_savings"])?.toLocaleString("es-ES")
+                        }
+                    </button>
+                </section>
+
+                <section className='newSavingGoals-amount-input'>
+                    <p>¡Sigue ahorrando para alcanzar tu meta!</p>
+
+                    <input
+                        type="range"
+                        name=''
+                        min={0}
+                        max={watch()?.total_savings || userData?.total}
+                        value={watch()["amount_savings"]}
+                        onChange={(event) => { setValue("amount_savings", event.target.value) }}
+                    />
+                </section>
+
+            </section>
+
             <section className='newSavingGoals-content'>
-
-
                 <section className='newSavingsGoals-section'>
+
                     <CustomInput
                         register={register}
                         name={"name_savings"}
@@ -139,7 +235,7 @@ const FormNewSavingsGoals = ({ handleStateModal }) => {
                 <section className='newSavingsGoals-section'>
                     <CustomInput
                         register={register}
-                        name={"amount_savings"}
+                        name={"total_savings"}
                         placeholder={"Monto que querés ahorrar"}
                         errors={errors}
                         setValue={setValue}
@@ -165,20 +261,23 @@ const FormNewSavingsGoals = ({ handleStateModal }) => {
                     name={"image_savings"}
                 />
 
-                <section className='newSavingsGoals-section-buttons'>
+                <section className='editSavingsGoals-section-buttons'>
+                    <section>
+                        <button className='button-delete' onClick={handleDelete} type='button'><SvgDeleteRed /></button>
+                    </section>
 
-                    <button onClick={handleReset} type='reset'>Cancelar</button>
-                    <button disabled={!isValid} type="submit">Confirmar</button>
+                    <section>
+                        <button onClick={handleReset} type='reset'>Cancelar</button>
+                        <button disabled={!isValid} type="submit">Confirmar</button>
+                    </section>
 
                 </section>
             </section>
-
-
         </form>
     )
 }
 
-export default FormNewSavingsGoals
+export default FormEditSavingsGoals
 
 /**
  * 

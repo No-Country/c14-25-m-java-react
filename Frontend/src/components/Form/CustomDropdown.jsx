@@ -28,6 +28,14 @@ const CustomDropdown = ({ name, setValue, register, placeholder, watch = null, d
 
     useEffect(() => {
         register(name, { required: true })
+
+        if (watch()[name]?.toString()?.length > 0) {
+            setValue(name, watch()[name], { shouldValidate: true })
+            setPlaceholderSelected(watch()[name])
+            setActiveDropdown(false)
+            setInputData(watch()[name])
+        }
+
     }, [])
 
     useEffect(() => {

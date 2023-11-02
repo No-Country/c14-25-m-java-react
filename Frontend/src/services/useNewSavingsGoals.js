@@ -11,53 +11,70 @@ export const useNewSavingsGoals = create((set) => ({
                 title: "Comprar Auto",
                 amount: 5000,
                 total: 700000,
-                image: goals_image_1
+                image: goals_image_1,
+                category: "Vacaciones",
+                friends: ["Guido", "Denise", "Valentino"],
+                isShared: "si",
+                time: "3 Meses"
             },
             {
                 id: 2,
                 title: "Renovación de la cocina",
                 amount: 100000,
                 total: 160000,
-                image: goals_image_2
+                image: goals_image_2,
+                category: "Vacaciones",
+                friends: ["Guido", "Denise", "Valentino"],
+                isShared: "si",
+                time: "3 Meses"
             },
             {
                 id: 3,
                 title: "Viaje con la familia",
                 amount: 9700,
                 total: 400000,
-                image: goals_image_3
+                image: goals_image_3,
+                category: "Vacaciones",
+                friends: ["Guido", "Denise", "Valentino"],
+                isShared: "si",
+                time: "3 Meses"
             }, {
                 id: 4,
                 title: "Comprar Auto",
                 amount: 5000,
                 total: 700000,
-                image: goals_image_1
+                image: goals_image_1,
+                category: "Vacaciones",
+                friends: ["Guido", "Denise", "Valentino"],
+                isShared: "si",
+                time: "3 Meses"
             },
             {
                 id: 5,
                 title: "Renovación de la cocina",
                 amount: 100000,
                 total: 160000,
-                image: goals_image_2
+                image: goals_image_2,
+                category: "Vacaciones",
+                friends: ["Guido", "Denise", "Valentino"],
+                isShared: "si",
+                time: "3 Meses"
             },
             {
                 id: 6,
                 title: "Viaje con la familia",
                 amount: 9700,
                 total: 400000,
-                image: goals_image_3
+                image: goals_image_3,
+                category: "Vacaciones",
+                friends: ["Guido", "Denise", "Valentino"],
+                isShared: "si",
+                time: "3 Meses"
             }
         ]
     ,
     dbAreaChart: [
-        {
-            id: "unused-dbAreaChart",
-            title: "",
-            savingsGoals: [
-
-            ],
-            totalPrice: 0
-        },
+        
         {
             id: "0-dbAreaChart",
             title: "Enero",
@@ -309,10 +326,46 @@ export const useNewSavingsGoals = create((set) => ({
         {
             id: state.db[state.db.length - 1].id + 1,
             amount: 0,
-            total: newData.amount_savings,
-            title: newData.name_savings,
-            image: newData.image_savings,
+            total: newData?.amount_savings,
+            title: newData?.name_savings,
+            image: newData?.image_savings,
+            category: newData?.category_savings,
+            isShared: newData?.shared_savings,
+            friends: newData?.friends_savings || null,
+            time: newData?.time_savings
         }
         ]
     }))
+    ,
+    findById: (id, state) => {
+
+        const foundUser = state.find((savingGoal) => {
+            return savingGoal.id == id;
+        });
+
+        return foundUser; // Devuelve el usuario encontrado o null si no se encuentra
+    },
+    updateDbById: (newData) => set((state) => (
+
+        {
+            db: [...state.db.filter((item)=>(item.id != newData.id)),
+            {
+                id: newData.id,
+                amount: newData?.amount_savings,
+                total: newData?.total_savings,
+                title: newData?.name_savings,
+                image: newData?.image_savings,
+                category: newData?.category_savings,
+                isShared: newData?.shared_savings,
+                friends: newData?.friends_savings || null,
+                time: newData?.time_savings
+            }
+            ]
+        }
+    )),
+    deleteDbById: (newData) => set((state) => (
+        {
+            db: [...state.db.filter((item)=>(item.id != newData.id))]
+        }
+    )),
 }));
