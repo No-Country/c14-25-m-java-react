@@ -50,7 +50,7 @@ const CustomAddOption = ({ register, name, title, options, watch }) => {
                                             className='customAddOption-label'
                                             id={"label"+ option + index}  
                                             htmlFor={option + index}
-                                            style={watch()[name]?.includes(option)?{backgroundColor:"#C5A7FF"}:{}} 
+                                            style={watch()?.name?.includes(option)?{backgroundColor:"#C5A7FF"}:{}} 
                                         >
                                             {option}
                                         </label>

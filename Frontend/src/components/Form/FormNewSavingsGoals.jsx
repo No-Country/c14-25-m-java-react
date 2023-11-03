@@ -28,8 +28,8 @@ const FormNewSavingsGoals = ({ handleStateModal }) => {
     } = useForm()
 
     const onSubmit = async (dataForm) => {
-        const response = await axios.post("https://api.cloudinary.com/v1_1/djlxueouv/image/upload", watch()["image_savings"])
-        increaseDB({ ...dataForm, image_savings: response.data.secure_url })
+        // const response = await axios.post("https://api.cloudinary.com/v1_1/djlxueouv/image/upload", watch()["image_savings"])
+        increaseDB({ ...dataForm, image_savings: watch()["temporal_image_savings"] })
         handleStateModal()
     }
 

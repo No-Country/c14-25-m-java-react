@@ -63,16 +63,47 @@ const FormEditSavingsGoals = ({ handleStateModal, id }) => {
     const onSubmit = async (dataForm) => {
         console.log("SUBMIT!")
         console.log(watch()["image_savings"] + "!=" + userData?.image)
-        let imageSavingsGoals = userData?.image
+        // let imageSavingsGoals = userData?.image
 
-        if (userData.image != watch()["image_savings"]) {
-            let response = await axios.post("https://api.cloudinary.com/v1_1/djlxueouv/image/upload", watch()["image_savings"])
-            imageSavingsGoals = response.data.secure_url;
-        }
-        
-        updateDbById({ ...dataForm, image_savings: imageSavingsGoals, id: id })
+        // if (userData.image != watch()["image_savings"]) {
+        //     let response = await axios.post("https://api.cloudinary.com/v1_1/djlxueouv/image/upload", watch()["image_savings"])
+        //     imageSavingsGoals = response.data.secure_url;
+        // }
 
-        handleStateModal()
+        Swal.fire({
+            title: '¿Editar meta de ahorro?',
+            text: "",
+            icon: 'success',
+            showCancelButton: true,
+            confirmButtonColor: '#5706AC',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Editar meta de ahorro',
+            cancelButtonText: "Cancelar",
+            customClass: {
+                confirmButton: 'my-confirm-button-class', // Clase CSS para el botón de confirmar
+                cancelButton: 'my-cancel-button-class' // Clase CSS para el botón de cancelar
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    '¡Meta de ahorro editada correctamente!',
+                    '',
+                    'success'
+                )
+
+                if (watch()["temporal_image_savings"]) {
+                    updateDbById({ ...dataForm, image_savings: watch()["temporal_image_savings"], id: id })
+                }
+                else {
+                    updateDbById({ ...dataForm, id: id })
+
+                }
+
+                handleStateModal()
+            }
+
+
+        })
     }
 
     const handleReset = () => {
@@ -83,30 +114,57 @@ const FormEditSavingsGoals = ({ handleStateModal, id }) => {
             showCancelButton: true,
             confirmButtonColor: '#5706AC',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Descartar',
+            confirmButtonText: 'Descartar cambios',
             cancelButtonText: "Cancelar",
             customClass: {
                 confirmButton: 'my-confirm-button-class', // Clase CSS para el botón de confirmar
                 cancelButton: 'my-cancel-button-class' // Clase CSS para el botón de cancelar
             }
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
-              Swal.fire(
-                '¡Cambios descartados correctamente!',
-                '',
-                'success'
-              )
+                Swal.fire(
+                    '¡Cambios descartados correctamente!',
+                    '',
+                    'success'
+                )
 
-              reset(initDefaultValues)
+                reset(initDefaultValues)
             }
 
-            
-          })
+
+        })
     }
 
     const handleDelete = () => {
-        deleteDbById({ id: id })
-        handleStateModal()
+
+        Swal.fire({
+            title: '¿Estas seguro de eliminar esta meta de ahorro?',
+            text: "",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#5706AC',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Eliminar meta de ahorro',
+            cancelButtonText: "Cancelar",
+            customClass: {
+                confirmButton: 'my-confirm-button-class', // Clase CSS para el botón de confirmar
+                cancelButton: 'my-cancel-button-class' // Clase CSS para el botón de cancelar
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Meta de ahorro eliminada correctamente!',
+                    '',
+                    'success'
+                )
+
+
+                deleteDbById({ id: id })
+                handleStateModal()
+            }
+
+
+        })
     }
 
     const category_savings = [
@@ -132,49 +190,49 @@ const FormEditSavingsGoals = ({ handleStateModal, id }) => {
 
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className='newSavingsGoals-form' action="">
+        <form onSubmit={handleSubmit(onSubmit)} className='newSavingsGoals-form editSavingsGoals-form' action="">
 
             <section>
-            <header className='newSavingsGoals-header'>
-                <h3>Editar meta de ahorro</h3>
+                <header className='newSavingsGoals-header'>
+                    <h3>Editar meta de ahorro</h3>
 
-                <span onClick={handleStateModal}>
-                    <SvgClose />
-                </span>
-            </header>
+                    <span onClick={handleStateModal}>
+                        <SvgClose />
+                    </span>
+                </header>
 
-            <section className='newEditSavingsGoals-image'>
-                <img src={watch()["temporal_image_savings"] || watch()["image_savings"]} alt="" />
-            </section>
-
-            <section className='newSavingGoals-amount'>
-
-                <section className='newSavingGoals-amount-title'>
-                    <h3>Monto ahorrado</h3>
-                    <button onClick={handleStateModal}>
-                        $
-                        <span className='bolder'>{watch()["amount_savings"]?.toLocaleString("es-ES")}</span>
-                        /
-                        {
-                            parseInt(watch()["total_savings"])?.toLocaleString("es-ES")
-                        }
-                    </button>
+                <section className='newEditSavingsGoals-image'>
+                    <img src={watch()["temporal_image_savings"] || watch()["image_savings"]} alt="" />
                 </section>
 
-                <section className='newSavingGoals-amount-input'>
-                    <p>¡Sigue ahorrando para alcanzar tu meta!</p>
+                <section className='newSavingGoals-amount'>
 
-                    <input
-                        type="range"
-                        name=''
-                        min={0}
-                        max={watch()?.total_savings || userData?.total}
-                        value={watch()["amount_savings"]}
-                        onChange={(event) => { setValue("amount_savings", event.target.value) }}
-                    />
+                    <section className='newSavingGoals-amount-title'>
+                        <h3>Monto ahorrado</h3>
+                        <button onClick={handleStateModal}>
+                            $
+                            <span className='bolder'>{watch()["amount_savings"]?.toLocaleString("es-ES")}</span>
+                            /
+                            {
+                                parseInt(watch()["total_savings"])?.toLocaleString("es-ES")
+                            }
+                        </button>
+                    </section>
+
+                    <section className='newSavingGoals-amount-input'>
+                        <p>¡Sigue ahorrando para alcanzar tu meta!</p>
+
+                        <input
+                            type="range"
+                            name=''
+                            min={0}
+                            max={watch()?.total_savings || userData?.total}
+                            value={watch()["amount_savings"]}
+                            onChange={(event) => { setValue("amount_savings", event.target.value) }}
+                        />
+                    </section>
+
                 </section>
-
-            </section>
             </section>
 
             <section className='newSavingGoals-content'>
