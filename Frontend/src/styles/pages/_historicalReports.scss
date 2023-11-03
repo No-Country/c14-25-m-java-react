@@ -1,0 +1,35 @@
+.historicalReports-search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1rem 0;
+    margin-bottom: 5rem;
+    background-color: $white-color;
+    border: 1px solid $gray-border-color;
+    border-radius: 10px;
+    min-height: 180px;
+    padding: 0 4rem;
+    flex-wrap: wrap;
+
+    section {
+        display: flex;
+        gap: 1rem;
+    }
+
+    button {
+        border-radius: $card-borderRadius;
+        padding: 12px 20px 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        border: none;
+        background: $background-buttonDefault;
+        color: $white-color;
+        font: $heading-fontsize-xs;
+        cursor: pointer;
+        min-width: 200px;
+        min-height: 50px;
+    }
+}

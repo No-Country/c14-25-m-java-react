@@ -1,9 +1,9 @@
-.Amount{
-    
+.Amount {
+
     list-style: none;
     background-color: $white-color;
-    border: $card-border;    
-    border-style:none none solid none;
+    border: $card-border;
+    border-style: none none solid none;
     align-items: center;
     padding: 1% 1.5%;
     display: grid;
@@ -11,97 +11,124 @@
     grid-template-columns: repeat(7, 1fr);
     gap: 2px;
     text-align: center;
-    
-    li{
+
+    li {
         font: normal 1rem $font-title;
-        
+
     }
-   
-    .AmountType{
+
+    .AmountType {
         text-align: left;
         font: 600 1rem $font-title;
     }
-    .AmountCategory{
-      span{
-        font: 700 1rem $font-title;
-        background-size: 2rem auto ;
-        color: $dark-violet;
-        background-color: $dark-violetRGBA;
-        border-radius:20px ;
-        padding: 0.2rem 1rem 0.2rem 1rem;
-      }
+
+    .AmountCategory {
+        span {
+            font: 700 1rem $font-title;
+            background-size: 2rem auto;
+            color: $dark-violet;
+            background-color: $dark-violetRGBA;
+            border-radius: 20px;
+            padding: 0.2rem 1rem 0.2rem 1rem;
+        }
     }
-    .AmountIcons{
+
+    .AmountIcons {
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
-       
-        button{
+
+        .download-button {
+            cursor: pointer;
+            border-radius: 10px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $dark-violet;
+            &:hover {
+                background: rgba(87, 6, 172, 0.2);
+            }
+
+            svg {
+                stroke-width: 0;
+            }
+        }
+
+        button {
             background-color: rgba(145, 36, 36, 0);
             border-color: rgba(0, 0, 0, 0);
             padding: 1%;
             align-items: center;
             cursor: pointer;
-            &:hover{
-                
+
+            &:hover {
+
                 border-radius: 10px;
                 //border-color:  $light-violet;
                 background-color: rgba(87, 6, 172, 0.2);
-                path{
+
+                path {
                     fill: $dark-violet;
-                    
+
                 }
             }
         }
-        svg{
-            
+
+        svg {
+
             margin: 1%;
-            
-            
+
+
         }
     }
-    &:last-child{
+
+    &:last-child {
         border: none;
     }
 }
-.AmountDetail{
+
+.AmountDetail {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    width: 100%;    
+    width: 100%;
     border: $card-border;
-    border-style:none none solid none;
+    border-style: none none solid none;
     padding: 1.5rem 1.5% 1.5rem 1.5%;
     align-items: center;
-    
-  
-  
-    li{
+
+
+
+    li {
         font: normal 1.125rem $font-title;
         text-align: center;
         display: flex;
-       
-        
-        
-        svg {       
-            
-            circle{ 
-                
+
+
+
+        svg {
+
+            circle {
+
                 align-items: center;
-                
+
             }
-          }
-       
+        }
+
     }
-    .AmountCategory{
+
+    .AmountCategory {
         align-items: center;
-        span{
+
+        span {
             font: normal 1.125rem $font-title;
             margin-left: 1rem;
         }
-       
+
 
     }
-  
-    
+
+
+
 }
