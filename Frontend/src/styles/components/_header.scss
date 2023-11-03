@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 1rem;
 
     .header-section-title {
 
@@ -27,6 +28,8 @@
         background-color: $white-color;
         min-width: 332px;
         position: relative;
+        
+    max-height: 100px;
 
         .header-section-user-image {
             width: 78px;
